@@ -86,9 +86,28 @@ with final.pkgs.lib; let
   ];
 
   extraPackages = with pkgs; [
-    # language servers, etc.
     lua-language-server
-    nil # nix LSP
+    stylua
+
+    nil
+    nixfmt-rfc-style
+
+    rust-analyzer
+    rustfmt
+
+    typescript-language-server
+    nodePackages.prettier
+
+    gopls
+    gofumpt
+
+    taplo # LSP and formatter
+
+    terraform-ls
+    opentofu # For formatter
+
+    pyright
+    black
   ];
 in {
   # This is the neovim derivation
