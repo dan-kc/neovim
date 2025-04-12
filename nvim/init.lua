@@ -1,91 +1,58 @@
-vim.loader.enable()
-
 local cmd = vim.cmd
+local fn = vim.fn
 local opt = vim.o
+local g = vim.g
 
--- <leader> key. Defaults to `\`. Some people prefer space.
--- The default leader is '\'. Some people prefer <space>. Uncomment this if you do, too.
--- vim.g.mapleader = ' '
--- vim.g.maplocalleader = ' '
-
--- See :h <option> to see what the options do
+-- Enable true colour support
+if fn.has('termguicolors') then
+  opt.termguicolors = true
+end
 
 -- Search down into subfolders
 opt.path = vim.o.path .. '**'
 
+g.mapleader = ' '
+g.maplocalleader = '\\'
+g.autoformat = false
+g.markdown_recommended_style = 0
+
+opt.clipboard = 'unnamedplus'
+opt.cmdheight = 0
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.expandtab = true
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+opt.ignorecase = true
+opt.smartcase = true -- Don't ignore case with capitals
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.cursorline = true
 opt.lazyredraw = true
 opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
 opt.hlsearch = true
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.sidescrolloff = 3
+opt.smartindent = true
+opt.conceallevel = 2
 
-opt.spell = true
-opt.spelllang = 'en'
-
-opt.expandtab = true
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
-opt.foldenable = true
+opt.foldenable = false
 opt.history = 2000
-opt.nrformats = 'bin,hex' -- 'octal'
 opt.undofile = true
 opt.splitright = true
 opt.splitbelow = true
-opt.cmdheight = 0
+opt.wrap = false
 
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-opt.colorcolumn = '100'
-
--- Configure Neovim diagnostic messages
-
-local function prefix_diagnostic(prefix, diagnostic)
-  return string.format(prefix .. ' %s', diagnostic.message)
-end
+opt.jumpoptions = 'stack'
 
 vim.diagnostic.config {
-  virtual_text = {
-    prefix = '',
-    format = function(diagnostic)
-      local severity = diagnostic.severity
-      if severity == vim.diagnostic.severity.ERROR then
-        return prefix_diagnostic('󰅚', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.WARN then
-        return prefix_diagnostic('⚠', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.INFO then
-        return prefix_diagnostic('ⓘ', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.HINT then
-        return prefix_diagnostic('󰌶', diagnostic)
-      end
-      return prefix_diagnostic('■', diagnostic)
-    end,
-  },
-  signs = {
-    text = {
-      -- Requires Nerd fonts
-      [vim.diagnostic.severity.ERROR] = '󰅚',
-      [vim.diagnostic.severity.WARN] = '⚠',
-      [vim.diagnostic.severity.INFO] = 'ⓘ',
-      [vim.diagnostic.severity.HINT] = '󰌶',
-    },
-  },
-  update_in_insert = false,
-  underline = true,
-  severity_sort = true,
-  float = {
-    focusable = false,
-    style = 'minimal',
-    border = 'rounded',
-    source = 'if_many',
-    header = '',
-    prefix = '',
-  },
+  signs = false,
+  virtual_text = false,
 }
+
+g.editorconfig = true
 
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')

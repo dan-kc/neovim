@@ -76,7 +76,7 @@ configs.setup {
         ['[P'] = '@parameter.outer',
       },
     },
-    lsp_interop = {
+    nsp_interop = {
       enable = true,
       peek_definition_code = {
         ['df'] = '@function.outer',
@@ -84,10 +84,6 @@ configs.setup {
       },
     },
   },
-}
-
-require('treesitter-context').setup {
-  max_lines = 3,
 }
 
 require('ts_context_commentstring').setup()
