@@ -6,8 +6,8 @@ vim.g.did_load_theme_plugin = true
 require('base16-colorscheme')
 -- vim.cmd("colorscheme base16-rose-pine")
 -- vim.cmd("colorscheme base16-rose-pine-moon")
-vim.cmd("colorscheme base16-snazzy")
--- vim.cmd("colorscheme base16-chalk")
+-- vim.cmd("colorscheme base16-snazzy")
+vim.cmd("colorscheme base16-chalk")
 -- vim.cmd("colorscheme base16-circus") -- boring
 -- vim.cmd("colorscheme base16-solarflare")
 -- vim.cmd("colorscheme base16-qualia")
