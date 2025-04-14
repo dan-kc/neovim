@@ -34,7 +34,7 @@ require('conform').setup {
 
     -- To be configured
     -- Go toml, docker,
-    -- c = { 'clang_format' },
+    c = { 'clang_format' },
     -- proto = { 'buf' },
   },
   formatters = {

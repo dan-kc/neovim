@@ -106,6 +106,8 @@ let
 
     pyright
     black
+
+    clang-tools
   ];
 in
 {
