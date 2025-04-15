@@ -108,6 +108,8 @@ let
     black
 
     clang-tools
+
+    djlint # Prettier doesn't work for html for some reason
   ];
 in
 {

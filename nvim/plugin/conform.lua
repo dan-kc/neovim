@@ -15,7 +15,7 @@ require('conform').setup {
     hcl = { 'tfmt' },
     python = { 'black' },
     c = { 'clang_format' },
-    html = { 'prettier' },
+    html = { 'djlint' },
     typescript = { 'prettier' },
     javascript = { 'prettier' },
     tsx = { 'prettier' },
