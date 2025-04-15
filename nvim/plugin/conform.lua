@@ -14,29 +14,29 @@ require('conform').setup {
     tf = { 'tfmt' },
     hcl = { 'tfmt' },
     python = { 'black' },
-
+    c = { 'clang_format' },
+    html = { 'prettier' },
     typescript = { 'prettier' },
+    javascript = { 'prettier' },
     tsx = { 'prettier' },
     jsx = { 'prettier' },
-    javascript = { 'prettier' },
-    vue = { 'prettier' },
     css = { 'prettier' },
     scss = { 'prettier' },
-    less = { 'prettier' },
-    html = { 'prettier' },
     json = { 'prettier' },
-    jsonc = { 'prettier' },
     yaml = { 'prettier' },
     markdown = { 'prettier' },
     graphql = { 'prettier' },
     handlebars = { 'prettier' },
-    toml = { 'taplo' },
 
     -- To be configured
+    toml = { 'taplo' },
+
     -- Go toml, docker,
-    c = { 'clang_format' },
     -- proto = { 'buf' },
   },
+  -- ft_parsers = {
+  --   html = 'html',
+  -- },
   formatters = {
     tfmt = {
       command = 'tofu',
