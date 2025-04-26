@@ -81,6 +81,7 @@ let
     mini-indentscope
     dressing-nvim
     dropbar-nvim
+    yazi-nvim
   ];
 
   extraPackages = with pkgs; [
