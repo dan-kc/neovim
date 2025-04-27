@@ -80,8 +80,8 @@ let
     indent-blankline-nvim
     mini-indentscope
     dressing-nvim
-    dropbar-nvim
     yazi-nvim
+    barbecue-nvim
   ];
 
   extraPackages = with pkgs; [
