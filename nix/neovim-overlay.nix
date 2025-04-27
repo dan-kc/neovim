@@ -91,19 +91,16 @@ let
     nil
     nixfmt-rfc-style
 
-    rust-analyzer
-    rustfmt
+    # rust-analyzer
+    # rustfmt
 
     typescript-language-server
     nodePackages.prettier
 
-    gopls
-    gofumpt
+    # gopls
+    # gofumpt
 
     taplo # LSP and formatter
-
-    terraform-ls
-    opentofu # For formatter
 
     pyright
     black
