@@ -82,6 +82,7 @@ let
     dressing-nvim
     yazi-nvim
     barbecue-nvim
+    resession-nvim
   ];
 
   extraPackages = with pkgs; [

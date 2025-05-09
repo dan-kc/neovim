@@ -30,6 +30,7 @@ opt.lazyredraw = true
 opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
 opt.hlsearch = true
+opt.swapfile = false
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.sidescrolloff = 3
 opt.smartindent = true
