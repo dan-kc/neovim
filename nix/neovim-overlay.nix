@@ -85,29 +85,29 @@ let
   ];
 
   extraPackages = with pkgs; [
-    lua-language-server
-    stylua
+    # lua-language-server
+    # stylua
 
-    nil
-    nixfmt-rfc-style
+    # nil
+    # nixfmt-rfc-style
 
     # rust-analyzer
     # rustfmt
 
-    typescript-language-server
-    nodePackages.prettier
+    # typescript-language-server
+    # nodePackages.prettier
 
     # gopls
     # gofumpt
 
-    taplo # LSP and formatter
+    # taplo # TOML LSP and formatter
 
-    pyright
-    black
+    # pyright
+    # black
 
-    clang-tools
+    # clang-tools
 
-    djlint # Prettier doesn't work for html for some reason
+    # djlint # Prettier doesn't work for html for some reason
   ];
 in
 {
