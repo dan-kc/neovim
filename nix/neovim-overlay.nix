@@ -31,7 +31,6 @@ let
   #   ...
   # }
   all-plugins = with pkgs.vimPlugins; [
-    neo-tree-nvim
     nvim-treesitter.withAllGrammars
     luasnip
     nvim-cmp
@@ -46,13 +45,10 @@ let
     cmp-cmdline-history
 
     gitsigns-nvim
-    # vim-fugitive I don't think i need.
     telescope-nvim
     telescope-fzy-native-nvim
     lualine-nvim
     nvim-navic
-    # statuscol-nvim dont think i need.
-    # nvim-treesitter-context
     nvim-treesitter-textobjects
     nvim-ts-context-commentstring
 

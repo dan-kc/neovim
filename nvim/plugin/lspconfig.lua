@@ -47,7 +47,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
--- lspconfig.nil_ls.setup({})
+lspconfig.nil_ls.setup({})
 
 lspconfig.lua_ls.setup {
   settings = {
