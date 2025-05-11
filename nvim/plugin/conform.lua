@@ -31,7 +31,6 @@ require('conform').setup {
     -- To be configured
     toml = { 'taplo' },
 
-    -- Go toml, docker,
     -- proto = { 'buf' },
   },
   -- ft_parsers = {
