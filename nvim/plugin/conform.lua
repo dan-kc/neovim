@@ -27,7 +27,7 @@ require('conform').setup {
     markdown = { 'prettier' },
     graphql = { 'prettier' },
     handlebars = { 'prettier' },
-    liquid = {'djlint'},
+    liquid = {'prettier'},
 
     -- To be configured
     toml = { 'taplo' },
