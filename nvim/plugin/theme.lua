@@ -6,7 +6,7 @@ vim.g.did_load_theme_plugin = true
 require('base16-colorscheme')
 vim.cmd("colorscheme base16-rose-pine")
 -- vim.cmd("colorscheme base16-rose-pine-moon")
--- vim.cmd("colorscheme base16-snazzy")
+-- vim.cmd('colorscheme base16-snazzy')
 -- vim.cmd("colorscheme base16-chalk")
 -- vim.cmd("colorscheme base16-circus") -- boring
 -- vim.cmd("colorscheme base16-solarflare")
@@ -19,7 +19,7 @@ vim.cmd("colorscheme base16-rose-pine")
 -- vim.cmd("colorscheme base16-ashes")
 -- vim.cmd('colorscheme base16-framer')
 -- vim.cmd('colorscheme base16-monokai')
--- vim.cmd("colorscheme base16-porple") 
+-- vim.cmd("colorscheme base16-porple")
 -- vim.cmd("colorscheme base16-rebecca")
 -- vim.cmd("colorscheme base16-twilight")
 -- vim.cmd("colorscheme base16-harmonic16-dark")
@@ -283,5 +283,40 @@ require('transparent').setup {
     'LazyButton',
     'LazyButtonActive',
     'LazyDimmed',
+
+    -- Barbecue
+    'barbecue_context_property',
+    'barbecue_context_field',
+    'barbecue_context_constructor',
+    'barbecue_context_module',
+    'barbecue_context_enum',
+    'barbecue_context_namespace',
+    'barbecue_context_interface',
+    'barbecue_context_package',
+    'barbecue_context_function',
+    'barbecue_context_class',
+    'barbecue_dirname',
+    'barbecue_basename',
+    'barbecue_context',
+    'barbecue_modified',
+    'barbecue_context_boolean',
+    'barbecue_normal',
+    'barbecue_context_array',
+    'barbecue_context_object',
+    'barbecue_ellipsis',
+    'barbecue_context_key',
+    'barbecue_separator',
+    'barbecue_context_null',
+    'barbecue_context_enum_member',
+    'barbecue_context_struct',
+    'barbecue_context_event',
+    'barbecue_context_operator',
+    'barbecue_context_type_parameter',
+    'barbecue_context',
+    'barbecue_context_file',
+    'barbecue_context_number',
+    'barbecue_context_variable',
+    'barbecue_context_method',
+    'barbecue_context_constant',
   },
 }
