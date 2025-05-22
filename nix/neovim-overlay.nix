@@ -1,17 +1,8 @@
-# This overlay, when applied to nixpkgs, adds the final neovim derivation to nixpkgs.
 { inputs }:
 final: prev:
 with final.pkgs.lib;
 let
   pkgs = final;
-
-  # Use this to create a plugin from a flake input
-  mkNvimPlugin =
-    src: pname:
-    pkgs.vimUtils.buildVimPlugin {
-      inherit pname src;
-      version = src.lastModifiedDate;
-    };
 
   # Make sure we use the pinned nixpkgs instance for wrapNeovimUnstable,
   # otherwise it could have an incompatible signature when applying this overlay.
@@ -69,7 +60,6 @@ let
     flash-nvim
     nvim-lspconfig
     treesj
-    obsidian-nvim
     mini-base16
     base16-nvim
     transparent-nvim

@@ -84,6 +84,8 @@ lspconfig.lua_ls.setup {
 --   cmd = { "/opt/homebrew/bin/elixir-ls" },
 -- })
 
+lspconfig.shopify_theme_ls.setup {}
+
 lspconfig.ts_ls.setup {
   settings = {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
