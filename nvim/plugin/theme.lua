@@ -4,7 +4,7 @@ end
 vim.g.did_load_theme_plugin = true
 
 require('base16-colorscheme')
-vim.cmd("colorscheme base16-rose-pine")
+-- vim.cmd("colorscheme base16-rose-pine")
 -- vim.cmd("colorscheme base16-rose-pine-moon")
 -- vim.cmd('colorscheme base16-snazzy')
 -- vim.cmd("colorscheme base16-chalk")
@@ -24,7 +24,7 @@ vim.cmd("colorscheme base16-rose-pine")
 -- vim.cmd("colorscheme base16-twilight")
 -- vim.cmd("colorscheme base16-harmonic16-dark")
 -- vim.cmd("colorscheme base16-danqing")
--- vim.cmd("colorscheme base16-eighties")
+vim.cmd("colorscheme base16-eighties")
 -- vim.cmd("colorscheme base16-gruvbox-dark-pale")
 -- vim.cmd("colorscheme base16-kimber")
 -- vim.cmd("set notermguicolors t_Co=16")
