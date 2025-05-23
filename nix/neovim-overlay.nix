@@ -69,6 +69,7 @@ let
     resession-nvim
     grug-far-nvim
     fzf-lua
+    stay-centered-nvim
   ];
 
   extraPackages = with pkgs; [
