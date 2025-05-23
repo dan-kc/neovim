@@ -47,7 +47,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-lspconfig.nil_ls.setup({})
+lspconfig.nil_ls.setup {}
 
 lspconfig.lua_ls.setup {
   settings = {
@@ -94,7 +94,9 @@ lspconfig.ts_ls.setup {
 
 lspconfig.rust_analyzer.setup {}
 lspconfig.gopls.setup {}
-lspconfig.terraformls.setup {}
+lspconfig.terraformls.setup {
+  cmd = { 'terraform-lsp' },
+}
 lspconfig.pyright.setup {}
 lspconfig.clangd.setup {}
 
