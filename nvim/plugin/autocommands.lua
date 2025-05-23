@@ -68,8 +68,9 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     if mark[1] > 0 and mark[1] <= lcount then
       pcall(vim.api.nvim_win_set_cursor, 0, mark)
     end
+    vim.cmd('normal! zz')
   end,
-  desc = 'go to last location when opening a buffer',
+  desc = 'go to last location when opening a buffer, then center cursor',
 })
 
 -- LSP stuff
