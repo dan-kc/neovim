@@ -16,11 +16,11 @@ end, { desc = 'Resume search' })
 
 vim.keymap.set('n', '<leader>/', function()
   fzf.oldfiles { cwd = vim.loop.cwd() }
-end, { desc = '[telescope] old files' })
+end, { desc = 'Old files' })
 
 vim.keymap.set('n', '<leader>sg', function()
   fzf.live_grep {
     glob_pattern = { '!.git/', '!node_modules/' },
     additional_args = { '--hidden' },
   }
-end, { desc = '[telescope] live grep' })
+end, { desc = 'Live grep' })

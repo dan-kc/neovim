@@ -36,8 +36,6 @@ let
     cmp-cmdline-history
 
     gitsigns-nvim
-    telescope-nvim
-    telescope-fzy-native-nvim
     lualine-nvim
     nvim-navic
     nvim-treesitter-textobjects
