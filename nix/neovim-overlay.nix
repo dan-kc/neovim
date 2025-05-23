@@ -69,6 +69,8 @@ let
     yazi-nvim
     barbecue-nvim
     resession-nvim
+    grug-far-nvim
+    fzf-lua
   ];
 
   extraPackages = with pkgs; [
