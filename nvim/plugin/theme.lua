@@ -103,9 +103,6 @@ require('transparent').setup {
     'DiagnosticSignHint',
     'DiagnosticSignInfo',
 
-    -- Barbecue
-    'barbecue_normal',
-
     -- NeoTree
     'NeoTreeBufferNumber',
     'NeoTreeCursorLine',

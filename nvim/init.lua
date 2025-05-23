@@ -34,7 +34,7 @@ opt.swapfile = false
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.sidescrolloff = 3
 opt.smartindent = true
-opt.conceallevel = 2
+opt.conceallevel = 0
 
 opt.tabstop = 2
 opt.softtabstop = 2
