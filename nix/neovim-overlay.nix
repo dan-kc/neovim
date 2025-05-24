@@ -72,6 +72,12 @@ let
     stay-centered-nvim
   ];
 
+  extraLuaPackages = p: [
+    # luajitPackages.lyaml
+    # lua54Packages.lyaml
+    p.lyaml
+  ];
+
   extraPackages = with pkgs; [
     # lua-language-server
     # stylua
@@ -99,21 +105,10 @@ let
   ];
 in
 {
-  # This is the neovim derivation
-  # returned by the overlay
   nvim-pkg = mkNeovim {
     plugins = all-plugins;
     inherit extraPackages;
-  };
-
-  # This is meant to be used within a devshell.
-  # Instead of loading the lua Neovim configuration from
-  # the Nix store, it is loaded from $XDG_CONFIG_HOME/nvim-dev
-  nvim-dev = mkNeovim {
-    plugins = all-plugins;
-    inherit extraPackages;
-    appName = "nvim-dev";
-    wrapRc = false;
+    inherit extraLuaPackages;
   };
 
   # This can be symlinked in the devShell's shellHook
