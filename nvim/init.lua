@@ -19,6 +19,7 @@ g.markdown_recommended_style = 0
 opt.clipboard = 'unnamedplus'
 opt.cmdheight = 0
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.mouse = ''
 opt.expandtab = true
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.ignorecase = true
