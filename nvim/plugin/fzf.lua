@@ -4,7 +4,21 @@ end
 vim.g.did_load_fzf_plugin = true
 
 local fzf = require('fzf-lua')
-fzf.setup {}
+fzf.setup {
+  winopts = {
+    height = 1,
+    width = 1,
+    preview = {
+      vertical = 'up',
+    },
+  },
+  keymap = {
+    fzf = {
+      true,
+      ['ctrl-q'] = 'select-all+accept',
+    },
+  },
+}
 
 vim.keymap.set('n', '<leader>f', function()
   fzf.files { hidden = true }
@@ -22,5 +36,6 @@ vim.keymap.set('n', '<leader>sg', function()
   fzf.live_grep {
     glob_pattern = { '!.git/', '!node_modules/' },
     additional_args = { '--hidden' },
+    multiprocess = true,
   }
 end, { desc = 'Live grep' })
