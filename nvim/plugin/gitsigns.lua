@@ -5,11 +5,8 @@ vim.g.did_load_gitsigns_plugin = true
 
 vim.schedule(function()
   require('gitsigns').setup {
-    current_line_blame = true,
-    signs = {
-      current_line_blame_opts = {
-        ignore_whitespace = true,
-      },
-    },
+    current_line_blame = false,
   }
 end)
+
+vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame <CR>', { desc = 'Git blame line' })
