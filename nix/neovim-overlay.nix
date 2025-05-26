@@ -65,7 +65,6 @@ let
     mini-indentscope
     dressing-nvim
     yazi-nvim
-    barbecue-nvim
     resession-nvim
     grug-far-nvim
     fzf-lua
@@ -73,8 +72,6 @@ let
   ];
 
   extraLuaPackages = p: [
-    # luajitPackages.lyaml
-    # lua54Packages.lyaml
     p.lyaml
   ];
 
@@ -100,8 +97,6 @@ let
     # black
 
     # clang-tools
-
-    # djlint # Prettier doesn't work for html for some reason
   ];
 in
 {
