@@ -79,1510 +79,1479 @@ end
 -- vim.cmd("colorscheme base16-kimber")
 -- vim.cmd("set notermguicolors t_Co=16")
 
--- require('transparent').setup {
---   groups = {
---     -- "Must haves"
---     'Pmenu',
---     'Normal',
---     'NormalNC',
---     'SignColumn',
---     'LspPreviewBorder',
---     'NormalFloat',
---     'FloatBorder',
+-- In your init.lua or a sourced .lua file
+
+-- vim.cmd('highlight Pmenu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NormalNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SignColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspPreviewBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NormalFloat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight VertSplit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StatusLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Comment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Constant ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Special ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Identifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Statement ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PreProc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Type ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Title ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Underlined ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Todo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight String ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Function ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatShadow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatShadowThrough ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Conditional ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Repeat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Operator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Structure ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NonText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLineFold ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FoldColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MsgSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight cErrInBracket ctermbg=NONE guibg=NONE')
 --
---     'VertSplit',
---     'StatusLine',
---     'Comment',
---     'Constant',
---     'Special',
---     'Identifier',
---     'Statement',
---     'PreProc',
---     'Type',
---     'Title',
---     'Underlined',
---     'Todo',
---     'String',
---     'Function',
---     'FloatTitle',
---     'FloatShadow',
---     'FloatShadowThrough',
---     'Conditional',
---     'Repeat',
---     'Operator',
---     'Structure',
---     'LineNr',
---     'NonText',
---     'CursorLineNr',
---     'CursorLineFold',
---     'FoldColumn',
---     'EndOfBuffer',
---     'MsgSeparator',
---     'cErrInBracket',
---   },
---
---   extra_groups = {
---
---     'Added',
---     'Bold',
---     'Boolean',
---     'Changed',
---     'Character',
---     'CmpDocumentation',
---     'CmpDocumentationBorder',
---     'CmpGhostText',
---     'CmpItemAbbr',
---     'CmpItemAbbrDefault',
---     'CmpItemAbbrDeprecated',
---     'CmpItemAbbrDeprecatedDefault',
---     'CmpItemAbbrMatch',
---     'CmpItemAbbrMatchDefault',
---     'CmpItemAbbrMatchFuzzy',
---     'CmpItemAbbrMatchFuzzyDefault',
---     'CmpItemKind',
---     'CmpItemKindClass',
---     'CmpItemKindClassDefault',
---     'CmpItemKindColor',
---     'CmpItemKindColorDefault',
---     'CmpItemKindConstant',
---     'CmpItemKindConstantDefault',
---     'CmpItemKindConstructor',
---     'CmpItemKindConstructorDefault',
---     'CmpItemKindDefault',
---     'CmpItemKindEnum',
---     'CmpItemKindEnumDefault',
---     'CmpItemKindEnumMember',
---     'CmpItemKindEnumMemberDefault',
---     'CmpItemKindEvent',
---     'CmpItemKindEventDefault',
---     'CmpItemKindField',
---     'CmpItemKindFieldDefault',
---     'CmpItemKindFile',
---     'CmpItemKindFileDefault',
---     'CmpItemKindFolder',
---     'CmpItemKindFolderDefault',
---     'CmpItemKindFunction',
---     'CmpItemKindFunctionDefault',
---     'CmpItemKindInterface',
---     'CmpItemKindInterfaceDefault',
---     'CmpItemKindKeyword',
---     'CmpItemKindKeywordDefault',
---     'CmpItemKindMethod',
---     'CmpItemKindMethodDefault',
---     'CmpItemKindModule',
---     'CmpItemKindModuleDefault',
---     'CmpItemKindOperator',
---     'CmpItemKindOperatorDefault',
---     'CmpItemKindProperty',
---     'CmpItemKindPropertyDefault',
---     'CmpItemKindReference',
---     'CmpItemKindReferenceDefault',
---     'CmpItemKindSnippet',
---     'CmpItemKindSnippetDefault',
---     'CmpItemKindStruct',
---     'CmpItemKindStructDefault',
---     'CmpItemKindText',
---     'CmpItemKindTextDefault',
---     'CmpItemKindTypeParameter',
---     'CmpItemKindTypeParameterDefault',
---     'CmpItemKindUnit',
---     'CmpItemKindUnitDefault',
---     'CmpItemKindValue',
---     'CmpItemKindValueDefault',
---     'CmpItemKindVariable',
---     'CmpItemKindVariableDefault',
---     'CmpItemMenu',
---     'CmpItemMenuDefault',
---     'ColorColumn',
---     'Comment',
---     'ComplMatchIns',
---     'Conceal',
---     'Conditional',
---     'Constant',
---     'CurSearch',
---     'Cursor',
---     'CursorColumn',
---     'CursorIM',
---     'CursorLine',
---     'CursorLineFold',
---     'CursorLineNr',
---     'CursorLineSign',
---     'DapUIBreakpointsCurrentLine',
---     'DapUIBreakpointsDisabledLine',
---     'DapUIBreakpointsInfo',
---     'DapUIBreakpointsLine',
---     'DapUIBreakpointsPath',
---     'DapUICurrentFrameName',
---     'DapUIDecoration',
---     'DapUIEndofBuffer',
---     'DapUIFloatBorder',
---     'DapUIFloatNormal',
---     'DapUIFrameName',
---     'DapUILineNumber',
---     'DapUIModifiedValue',
---     'DapUINormal',
---     'DapUINormalNC',
---     'DapUIPlayPause',
---     'DapUIPlayPauseNC',
---     'DapUIRestart',
---     'DapUIRestartNC',
---     'DapUIScope',
---     'DapUISource',
---     'DapUIStepBack',
---     'DapUIStepBackNC',
---     'DapUIStepInto',
---     'DapUIStepIntoNC',
---     'DapUIStepOut',
---     'DapUIStepOutNC',
---     'DapUIStepOver',
---     'DapUIStepOverNC',
---     'DapUIStop',
---     'DapUIStopNC',
---     'DapUIStoppedThread',
---     'DapUIThread',
---     'DapUIType',
---     'DapUIUnavailable',
---     'DapUIUnavailableNC',
---     'DapUIValue',
---     'DapUIVariable',
---     'DapUIWatchesEmpty',
---     'DapUIWatchesError',
---     'DapUIWatchesValue',
---     'DapUIWinSelect',
---     'Debug',
---     'Define',
---     'Delimiter',
---     'DevIcon3DObjectFile',
---     'DevIcon3gp',
---     'DevIcon7z',
---     'DevIconAOSC',
---     'DevIconAdvancedAudioCoding',
---     'DevIconAi',
---     'DevIconAlmalinux',
---     'DevIconAlpine',
---     'DevIconAndroid',
---     'DevIconApp',
---     'DevIconApple',
---     'DevIconAppleScript',
---     'DevIconArch',
---     'DevIconArchcraft',
---     'DevIconArchlabs',
---     'DevIconArcoLinux',
---     'DevIconArduino',
---     'DevIconArtix',
---     'DevIconAsc',
---     'DevIconAsciinema',
---     'DevIconAss',
---     'DevIconAstro',
---     'DevIconAudioInterchangeFileFormat',
---     'DevIconAutoCADDwg',
---     'DevIconAutoCADDxf',
---     'DevIconAvif',
---     'DevIconAwk',
---     'DevIconAzureCli',
---     'DevIconBSPWM',
---     'DevIconBabelrc',
---     'DevIconBackup',
---     'DevIconBash',
---     'DevIconBashProfile',
---     'DevIconBashrc',
---     'DevIconBat',
---     'DevIconBazel',
---     'DevIconBazelBuild',
---     'DevIconBazelWorkspace',
---     'DevIconBibTeX',
---     'DevIconBicep',
---     'DevIconBicepParameters',
---     'DevIconBigLinux',
---     'DevIconBin',
---     'DevIconBinaryGLTF',
---     'DevIconBlade',
---     'DevIconBlender',
---     'DevIconBlueprint',
---     'DevIconBmp',
---     'DevIconBoundaryRepresentation',
---     'DevIconBrewfile',
---     'DevIconBudgie',
---     'DevIconBz',
---     'DevIconBz2',
---     'DevIconBz3',
---     'DevIconBzl',
---     'DevIconC',
---     'DevIconCMake',
---     'DevIconCMakeLists',
---     'DevIconCPlusPlus',
---     'DevIconCPlusPlusModule',
---     'DevIconCSharpProject',
---     'DevIconCache',
---     'DevIconCantorrc',
---     'DevIconCentos',
---     'DevIconCheckhealth',
---     'DevIconCinnamon',
---     'DevIconCjs',
---     'DevIconClojure',
---     'DevIconClojureC',
---     'DevIconClojureDart',
---     'DevIconClojureJS',
---     'DevIconCobol',
---     'DevIconCoffee',
---     'DevIconConf',
---     'DevIconConfig',
---     'DevIconConfigRu',
---     'DevIconConfiguration',
---     'DevIconCp',
---     'DevIconCpp',
---     'DevIconCppm',
---     'DevIconCrdownload',
---     'DevIconCrystal',
---     'DevIconCrystalLinux',
---     'DevIconCs',
---     'DevIconCsh',
---     'DevIconCson',
---     'DevIconCss',
---     'DevIconCsv',
---     'DevIconCts',
---     'DevIconCue',
---     'DevIconCxx',
---     'DevIconCxxm',
---     'DevIconD',
---     'DevIconDart',
---     'DevIconDb',
---     'DevIconDconf',
---     'DevIconDebian',
---     'DevIconDeepin',
---     'DevIconDefault',
---     'DevIconDesktopEntry',
---     'DevIconDevuan',
---     'DevIconDiff',
---     'DevIconDll',
---     'DevIconDoc',
---     'DevIconDockerfile',
---     'DevIconDocx',
---     'DevIconDot',
---     'DevIconDownload',
---     'DevIconDrools',
---     'DevIconDropbox',
---     'DevIconDsStore',
---     'DevIconDump',
---     'DevIconEbook',
---     'DevIconEditorConfig',
---     'DevIconEdn',
---     'DevIconEex',
---     'DevIconEjs',
---     'DevIconElementary',
---     'DevIconElf',
---     'DevIconElisp',
---     'DevIconElm',
---     'DevIconEmbeddedOpenTypeFont',
---     'DevIconEndeavour',
---     'DevIconEnlightenment',
---     'DevIconEnv',
---     'DevIconEpp',
---     'DevIconEpub',
---     'DevIconErb',
---     'DevIconErl',
---     'DevIconEslintIgnore',
---     'DevIconEslintrc',
---     'DevIconEx',
---     'DevIconExe',
---     'DevIconExs',
---     'DevIconFIGletFontControl',
---     'DevIconFIGletFontFormat',
---     'DevIconFavicon',
---     'DevIconFdmdownload',
---     'DevIconFedora',
---     'DevIconFennel',
---     'DevIconFish',
---     'DevIconFluxbox',
---     'DevIconFortran',
---     'DevIconFreeBSD',
---     'DevIconFreeCAD',
---     'DevIconFreeCADConfig',
---     'DevIconFreeLosslessAudioCodec',
---     'DevIconFs',
---     'DevIconFsharp',
---     'DevIconFsi',
---     'DevIconFsscript',
---     'DevIconFsx',
---     'DevIconFusion360',
---     'DevIconGCode',
---     'DevIconGDScript',
---     'DevIconGIMP',
---     'DevIconGNOME',
---     'DevIconGTK',
---     'DevIconGarudaLinux',
---     'DevIconGemfile',
---     'DevIconGemspec',
---     'DevIconGentoo',
---     'DevIconGif',
---     'DevIconGitAttributes',
---     'DevIconGitCommit',
---     'DevIconGitConfig',
---     'DevIconGitIgnore',
---     'DevIconGitLogo',
---     'DevIconGitModules',
---     'DevIconGitlabCI',
---     'DevIconGo',
---     'DevIconGodotProject',
---     'DevIconGodotTextResource',
---     'DevIconGodotTextScene',
---     'DevIconGradleBuildScript',
---     'DevIconGradleProperties',
---     'DevIconGradleSettings',
---     'DevIconGradleWrapperProperties',
---     'DevIconGradleWrapperScript',
---     'DevIconGraphQL',
---     'DevIconGroovy',
---     'DevIconGruntfile',
---     'DevIconGuix',
---     'DevIconGulpfile',
---     'DevIconGv',
---     'DevIconGvimrc',
---     'DevIconGz',
---     'DevIconH',
---     'DevIconHaml',
---     'DevIconHaxe',
---     'DevIconHbs',
---     'DevIconHeex',
---     'DevIconHexadecimal',
---     'DevIconHh',
---     'DevIconHpp',
---     'DevIconHrl',
---     'DevIconHs',
---     'DevIconHtm',
---     'DevIconHtml',
---     'DevIconHuff',
---     'DevIconHurl',
---     'DevIconHxx',
---     'DevIconHyperbolaGNULinuxLibre',
---     'DevIconHyprland',
---     'DevIconIcal',
---     'DevIconIcalendar',
---     'DevIconIco',
---     'DevIconIcs',
---     'DevIconIfb',
---     'DevIconIfc',
---     'DevIconIge',
---     'DevIconIges',
---     'DevIconIgs',
---     'DevIconIllumos',
---     'DevIconImage',
---     'DevIconImg',
---     'DevIconImportConfiguration',
---     'DevIconInfo',
---     'DevIconIni',
---     'DevIconIso',
---     'DevIconIxx',
---     'DevIconJWM',
---     'DevIconJava',
---     'DevIconJavaScriptReactSpec',
---     'DevIconJavaScriptReactTest',
---     'DevIconJl',
---     'DevIconJpeg',
---     'DevIconJpegXl',
---     'DevIconJpg',
---     'DevIconJs',
---     'DevIconJson',
---     'DevIconJson5',
---     'DevIconJsonc',
---     'DevIconJsx',
---     'DevIconKDEPlasma',
---     'DevIconKDEglobals',
---     'DevIconKDEneon',
---     'DevIconKalgebrarc',
---     'DevIconKali',
---     'DevIconKbx',
---     'DevIconKdb',
---     'DevIconKdbx',
---     'DevIconKdenlive',
---     'DevIconKdenliveLayoutsrc',
---     'DevIconKdenliverc',
---     'DevIconKiCad',
---     'DevIconKiCadCache',
---     'DevIconKiCadFootprintTable',
---     'DevIconKiCadSymbolTable',
---     'DevIconKotlin',
---     'DevIconKotlinScript',
---     'DevIconKrita',
---     'DevIconKritadisplayrc',
---     'DevIconKritarc',
---     'DevIconKsh',
---     'DevIconKubuntu',
---     'DevIconLXDE',
---     'DevIconLXDEConfigFile',
---     'DevIconLXLE',
---     'DevIconLXQt',
---     'DevIconLXQtConfigFile',
---     'DevIconLeex',
---     'DevIconLess',
---     'DevIconLhs',
---     'DevIconLib',
---     'DevIconLibrecadFontFile',
---     'DevIconLicense',
---     'DevIconLinux',
---     'DevIconLinuxKernelObject',
---     'DevIconLiquid',
---     'DevIconLocOS',
---     'DevIconLocalization',
---     'DevIconLock',
---     'DevIconLog',
---     'DevIconLogos',
---     'DevIconLrc',
---     'DevIconLua',
---     'DevIconLuau',
---     'DevIconLuaurc',
---     'DevIconM3u',
---     'DevIconM3u8',
---     'DevIconM4V',
---     'DevIconMATE',
---     'DevIconMOV',
---     'DevIconMPEG4',
---     'DevIconMPEGAudioLayerIII',
---     'DevIconMXLinux',
---     'DevIconMageia',
---     'DevIconMagnet',
---     'DevIconMailmap',
---     'DevIconMakefile',
---     'DevIconManjaro',
---     'DevIconMarkdown',
---     'DevIconMaterial',
---     'DevIconMaven',
---     'DevIconMd',
---     'DevIconMd5',
---     'DevIconMdx',
---     'DevIconMint',
---     'DevIconMixLock',
---     'DevIconMjs',
---     'DevIconMkv',
---     'DevIconMl',
---     'DevIconMli',
---     'DevIconMobi',
---     'DevIconMonkeysAudio',
---     'DevIconMotoko',
---     'DevIconMp4',
---     'DevIconMpp',
---     'DevIconMpv',
---     'DevIconMts',
---     'DevIconMustache',
---     'DevIconNPMIgnore',
---     'DevIconNPMrc',
---     'DevIconNfo',
---     'DevIconNim',
---     'DevIconNix',
---     'DevIconNixOS',
---     'DevIconNodeModules',
---     'DevIconNotebook',
---     'DevIconNswag',
---     'DevIconNushell',
---     'DevIconObjectFile',
---     'DevIconObjectiveC',
---     'DevIconObjectiveCPlusPlus',
---     'DevIconOggVorbis',
---     'DevIconOpenBSD',
---     'DevIconOpenSCAD',
---     'DevIconOpenTypeFont',
---     'DevIconOpusAudioFile',
---     'DevIconOrgMode',
---     'DevIconOut',
---     'DevIconPKGBUILD',
---     'DevIconPackageJson',
---     'DevIconPackageLockJson',
---     'DevIconPackedResource',
---     'DevIconParabolaGNULinuxLibre',
---     'DevIconParrot',
---     'DevIconPart',
---     'DevIconPatch',
---     'DevIconPdf',
---     'DevIconPhp',
---     'DevIconPl',
---     'DevIconPlatformio',
---     'DevIconPls',
---     'DevIconPm',
---     'DevIconPng',
---     'DevIconPop_OS',
---     'DevIconPp',
---     'DevIconPpt',
---     'DevIconPrettierConfig',
---     'DevIconPrisma',
---     'DevIconProcfile',
---     'DevIconProlog',
---     'DevIconPrusaSlicer',
---     'DevIconPsManifestfile',
---     'DevIconPsScriptModulefile',
---     'DevIconPsScriptfile',
---     'DevIconPsb',
---     'DevIconPsd',
---     'DevIconPub',
---     'DevIconPulseCodeModulation',
---     'DevIconPuppyLinux',
---     'DevIconPxd',
---     'DevIconPxi',
---     'DevIconPy',
---     'DevIconPyc',
---     'DevIconPyd',
---     'DevIconPyi',
---     'DevIconPyo',
---     'DevIconPyx',
---     'DevIconQt',
---     'DevIconQtile',
---     'DevIconQubesOS',
---     'DevIconQuery',
---     'DevIconR',
---     'DevIconRake',
---     'DevIconRakefile',
---     'DevIconRar',
---     'DevIconRaspberryPiOS',
---     'DevIconRazorPage',
---     'DevIconRb',
---     'DevIconReScript',
---     'DevIconReScriptInterface',
---     'DevIconRedhat',
---     'DevIconRlib',
---     'DevIconRmd',
---     'DevIconRockyLinux',
---     'DevIconRproj',
---     'DevIconRs',
---     'DevIconRss',
---     'DevIconSRCINFO',
---     'DevIconSabayon',
---     'DevIconSass',
---     'DevIconScala',
---     'DevIconScalaScript',
---     'DevIconScheme',
---     'DevIconScss',
---     'DevIconSettingsJson',
---     'DevIconSh',
---     'DevIconSha1',
---     'DevIconSha224',
---     'DevIconSha256',
---     'DevIconSha384',
---     'DevIconSha512',
---     'DevIconSharedObject',
---     'DevIconSig',
---     'DevIconSignature',
---     'DevIconSketchUp',
---     'DevIconSlackware',
---     'DevIconSlim',
---     'DevIconSln',
---     'DevIconSml',
---     'DevIconSolidWorksAsm',
---     'DevIconSolidWorksPrt',
---     'DevIconSolidity',
---     'DevIconSolus',
---     'DevIconSolveSpace',
---     'DevIconSpecJs',
---     'DevIconSpecTs',
---     'DevIconSql',
---     'DevIconSrt',
---     'DevIconSsa',
---     'DevIconStaticLibraryArchive',
---     'DevIconSte',
---     'DevIconStep',
---     'DevIconStp',
---     'DevIconStyl',
---     'DevIconSub',
---     'DevIconSublime',
---     'DevIconSuo',
---     'DevIconSvelte',
---     'DevIconSvelteConfig',
---     'DevIconSvg',
---     'DevIconSway',
---     'DevIconSwift',
---     'DevIconSystemVerilog',
---     'DevIconTFVars',
---     'DevIconTSConfig',
---     'DevIconTails',
---     'DevIconTailwindConfig',
---     'DevIconTcl',
---     'DevIconTempl',
---     'DevIconTerminal',
---     'DevIconTerraform',
---     'DevIconTestJs',
---     'DevIconTestTs',
---     'DevIconTex',
---     'DevIconTgz',
---     'DevIconThunderbird',
---     'DevIconTmux',
---     'DevIconToml',
---     'DevIconTor',
---     'DevIconTorrent',
---     'DevIconTrisquelGNULinux',
---     'DevIconTrueTypeFont',
---     'DevIconTsx',
---     'DevIconTwig',
---     'DevIconTxt',
---     'DevIconTxz',
---     'DevIconTypeScript',
---     'DevIconTypeScriptDeclaration',
---     'DevIconTypeScriptReactSpec',
---     'DevIconTypeScriptReactTest',
---     'DevIconTypoScript',
---     'DevIconTypoScriptConfig',
---     'DevIconTypoScriptSetup',
---     'DevIconUI',
---     'DevIconUbuntu',
---     'DevIconVHDL',
---     'DevIconVLC',
---     'DevIconVRML',
---     'DevIconVagrantfile',
---     'DevIconVala',
---     'DevIconVanillaOS',
---     'DevIconVerilog',
---     'DevIconVim',
---     'DevIconVimrc',
---     'DevIconVlang',
---     'DevIconVoid',
---     'DevIconVsix',
---     'DevIconVue',
---     'DevIconWasm',
---     'DevIconWaveformAudioFile',
---     'DevIconWebOpenFontFormat',
---     'DevIconWebm',
---     'DevIconWebmanifest',
---     'DevIconWebp',
---     'DevIconWebpack',
---     'DevIconWeston',
---     'DevIconWindows',
---     'DevIconWindowsMediaAudio',
---     'DevIconXInitrc',
---     'DevIconXSettingsdConf',
---     'DevIconXaml',
---     'DevIconXauthority',
---     'DevIconXcLocalization',
---     'DevIconXcPlayground',
---     'DevIconXeroLinux',
---     'DevIconXfce',
---     'DevIconXls',
---     'DevIconXlsx',
---     'DevIconXml',
---     'DevIconXorgConf',
---     'DevIconXpi',
---     'DevIconXresources',
---     'DevIconXsession',
---     'DevIconXul',
---     'DevIconXz',
---     'DevIconYaml',
---     'DevIconYml',
---     'DevIconZig',
---     'DevIconZigObjectNotation',
---     'DevIconZip',
---     'DevIconZorin',
---     'DevIconZsh',
---     'DevIconZshenv',
---     'DevIconZshprofile',
---     'DevIconZshrc',
---     'DevIconZst',
---     'DevIconapk',
---     'DevIconawesome',
---     'DevIconcuda',
---     'DevIconcudah',
---     'DevIcondwm',
---     'DevIconi3',
---     'DevIconopenSUSE',
---     'DevIconpostmarketOS',
---     'DevIconsbt',
---     'DevIconxmonad',
---     'DiagnosticDeprecated',
---     'DiagnosticError',
---     'DiagnosticFloatingError',
---     'DiagnosticFloatingHint',
---     'DiagnosticFloatingInfo',
---     'DiagnosticFloatingOk',
---     'DiagnosticFloatingWarn',
---     'DiagnosticHint',
---     'DiagnosticInfo',
---     'DiagnosticOk',
---     'DiagnosticSignError',
---     'DiagnosticSignHint',
---     'DiagnosticSignInfo',
---     'DiagnosticSignOk',
---     'DiagnosticSignWarn',
---     'DiagnosticUnderlineError',
---     'DiagnosticUnderlineHint',
---     'DiagnosticUnderlineInfo',
---     'DiagnosticUnderlineInformation',
---     'DiagnosticUnderlineOk',
---     'DiagnosticUnderlineWarn',
---     'DiagnosticUnderlineWarning',
---     'DiagnosticUnnecessary',
---     'DiagnosticVirtualLinesError',
---     'DiagnosticVirtualLinesHint',
---     'DiagnosticVirtualLinesInfo',
---     'DiagnosticVirtualLinesOk',
---     'DiagnosticVirtualLinesWarn',
---     'DiagnosticVirtualTextError',
---     'DiagnosticVirtualTextHint',
---     'DiagnosticVirtualTextInfo',
---     'DiagnosticVirtualTextOk',
---     'DiagnosticVirtualTextWarn',
---     'DiagnosticWarn',
---     'DiffAdd',
---     'DiffAdded',
---     'DiffChange',
---     'DiffDelete',
---     'DiffFile',
---     'DiffLine',
---     'DiffNewFile',
---     'DiffRemoved',
---     'DiffText',
---     'Directory',
---     'DressingSelectIdx',
---     'EndOfBuffer',
---     'Error',
---     'ErrorMsg',
---     'Exception',
---     'Float',
---     'FloatBorder',
---     'FloatFooter',
---     'FloatShadow',
---     'FloatShadowThrough',
---     'FloatTitle',
---     'FoldColumn',
---     'Folded',
---     'Function',
---     'FzfLuaBackdrop',
---     'FzfLuaBorder',
---     'FzfLuaBufFlagAlt',
---     'FzfLuaBufFlagCur',
---     'FzfLuaBufId',
---     'FzfLuaBufLineNr',
---     'FzfLuaBufName',
---     'FzfLuaBufNr',
---     'FzfLuaCursor',
---     'FzfLuaCursorLine',
---     'FzfLuaCursorLineNr',
---     'FzfLuaDirIcon',
---     'FzfLuaDirPart',
---     'FzfLuaFilePart',
---     'FzfLuaFzfBorder',
---     'FzfLuaFzfCursorLine',
---     'FzfLuaFzfGutter',
---     'FzfLuaFzfHeader',
---     'FzfLuaFzfInfo',
---     'FzfLuaFzfMarker',
---     'FzfLuaFzfMatch',
---     'FzfLuaFzfNormal',
---     'FzfLuaFzfPointer',
---     'FzfLuaFzfPrompt',
---     'FzfLuaFzfQuery',
---     'FzfLuaFzfScrollbar',
---     'FzfLuaFzfSeparator',
---     'FzfLuaFzfSpinner',
---     'FzfLuaHeaderBind',
---     'FzfLuaHeaderText',
---     'FzfLuaHelpBorder',
---     'FzfLuaHelpNormal',
---     'FzfLuaLivePrompt',
---     'FzfLuaLiveSym',
---     'FzfLuaNormal',
---     'FzfLuaPathColNr',
---     'FzfLuaPathLineNr',
---     'FzfLuaPreviewBorder',
---     'FzfLuaPreviewNormal',
---     'FzfLuaPreviewTitle',
---     'FzfLuaScrollBorderBackCompat',
---     'FzfLuaScrollBorderEmpty',
---     'FzfLuaScrollBorderFull',
---     'FzfLuaScrollFloatEmpty',
---     'FzfLuaScrollFloatFull',
---     'FzfLuaSearch',
---     'FzfLuaTabMarker',
---     'FzfLuaTabTitle',
---     'FzfLuaTitle',
---     'FzfLuaTitleFlags',
---     'GitGutterAdd',
---     'GitGutterAddLine',
---     'GitGutterAddLineNr',
---     'GitGutterChange',
---     'GitGutterChangeDelete',
---     'GitGutterChangeLine',
---     'GitGutterChangeLineNr',
---     'GitGutterDelete',
---     'GitGutterDeleteLine',
---     'GitGutterDeleteLineNr',
---     'GitSignsAdd',
---     'GitSignsAddCul',
---     'GitSignsAddInline',
---     'GitSignsAddLine',
---     'GitSignsAddLn',
---     'GitSignsAddLnInline',
---     'GitSignsAddNr',
---     'GitSignsAddPreview',
---     'GitSignsChange',
---     'GitSignsChangeCul',
---     'GitSignsChangeInline',
---     'GitSignsChangeLn',
---     'GitSignsChangeLnInline',
---     'GitSignsChangeNr',
---     'GitSignsChangedelete',
---     'GitSignsChangedeleteCul',
---     'GitSignsChangedeleteLn',
---     'GitSignsChangedeleteNr',
---     'GitSignsCurrentLineBlame',
---     'GitSignsDelete',
---     'GitSignsDeleteCul',
---     'GitSignsDeleteInline',
---     'GitSignsDeleteLn',
---     'GitSignsDeleteLnInline',
---     'GitSignsDeleteNr',
---     'GitSignsDeletePreview',
---     'GitSignsDeleteVirtLn',
---     'GitSignsDeleteVirtLnInLine',
---     'GitSignsStagedAdd',
---     'GitSignsStagedAddCul',
---     'GitSignsStagedAddLn',
---     'GitSignsStagedAddNr',
---     'GitSignsStagedChange',
---     'GitSignsStagedChangeCul',
---     'GitSignsStagedChangeLn',
---     'GitSignsStagedChangeNr',
---     'GitSignsStagedChangedelete',
---     'GitSignsStagedChangedeleteCul',
---     'GitSignsStagedChangedeleteLn',
---     'GitSignsStagedChangedeleteNr',
---     'GitSignsStagedDelete',
---     'GitSignsStagedDeleteCul',
---     'GitSignsStagedDeleteNr',
---     'GitSignsStagedTopdelete',
---     'GitSignsStagedTopdeleteCul',
---     'GitSignsStagedTopdeleteLn',
---     'GitSignsStagedTopdeleteNr',
---     'GitSignsStagedUntracked',
---     'GitSignsStagedUntrackedCul',
---     'GitSignsStagedUntrackedLn',
---     'GitSignsStagedUntrackedNr',
---     'GitSignsTopdelete',
---     'GitSignsTopdeleteCul',
---     'GitSignsTopdeleteLn',
---     'GitSignsTopdeleteNr',
---     'GitSignsUntracked',
---     'GitSignsUntrackedCul',
---     'GitSignsUntrackedLn',
---     'GitSignsUntrackedNr',
---     'GitSignsVirtLnum',
---     'IblIndent',
---     'IblScope',
---     'IblWhitespace',
---     'Identifier',
---     'Ignore',
---     'IlluminatedWordRead',
---     'IlluminatedWordText',
---     'IlluminatedWordWrite',
---     'IncSearch',
---     'Include',
---     'IndentBlanklineChar',
---     'IndentBlanklineContextChar',
---     'Integer',
---     'Italic',
---     'Keyword',
---     'Label',
---     'LazyButton',
---     'LazyButtonActive',
---     'LazyDimmed',
---     'LineNr',
---     'LineNrAbove',
---     'LineNrBelow',
---     'LspCodeLens',
---     'LspCodeLensSeparator',
---     'LspDiagnosticsDefaultError',
---     'LspDiagnosticsDefaultHint',
---     'LspDiagnosticsDefaultInformation',
---     'LspDiagnosticsDefaultWarning',
---     'LspDiagnosticsUnderlineError',
---     'LspDiagnosticsUnderlineHint',
---     'LspDiagnosticsUnderlineInformation',
---     'LspDiagnosticsUnderlineWarning',
---     'LspInlayHint',
---     'LspReferenceRead',
---     'LspReferenceTarget',
---     'LspReferenceText',
---     'LspReferenceWrite',
---     'LspSignatureActiveParameter',
---     'Macro',
---     'MatchParen',
---     'MiniCompletionActiveParameter',
---     'MiniIcons',
---     'MiniIconsAzure',
---     'MiniIconsBlue',
---     'MiniIconsCyan',
---     'MiniIconsGreen',
---     'MiniIconsGrey',
---     'MiniIconsOrange',
---     'MiniIconsPurple',
---     'MiniIconsRed',
---     'MiniIconsYellow',
---     'ModeMsg',
---     'MoreMsg',
---     'MsgArea',
---     'MsgSeparator',
---     'NeoTreeBufferNumber',
---     'NeoTreeCursorLine',
---     'NeoTreeDimText',
---     'NeoTreeDirectoryIcon',
---     'NeoTreeDirectoryName',
---     'NeoTreeDotfile',
---     'NeoTreeEndOfBuffer',
---     'NeoTreeExpander',
---     'NeoTreeFadeText1',
---     'NeoTreeFadeText2',
---     'NeoTreeFileIcon',
---     'NeoTreeFileName',
---     'NeoTreeFileNameOpened',
---     'NeoTreeFileStats',
---     'NeoTreeFileStatsHeader',
---     'NeoTreeFilterTerm',
---     'NeoTreeFloatBorder',
---     'NeoTreeFloatNormal',
---     'NeoTreeFloatTitle',
---     'NeoTreeGitAdded',
---     'NeoTreeGitConflict',
---     'NeoTreeGitDeleted',
---     'NeoTreeGitIgnored',
---     'NeoTreeGitModified',
---     'NeoTreeGitRenamed',
---     'NeoTreeGitStaged',
---     'NeoTreeGitUnstaged',
---     'NeoTreeGitUntracked',
---     'NeoTreeHiddenByName',
---     'NeoTreeIndentMarker',
---     'NeoTreeMessage',
---     'NeoTreeModified',
---     'NeoTreeNormal',
---     'NeoTreeNormalNC',
---     'NeoTreePreview',
---     'NeoTreeRootName',
---     'NeoTreeSignColumn',
---     'NeoTreeStatusLine',
---     'NeoTreeStatusLineNC',
---     'NeoTreeSymbolicLinkTarget',
---     'NeoTreeTabActive',
---     'NeoTreeTabInactive',
---     'NeoTreeTabSeparatorActive',
---     'NeoTreeTabSeparatorInactive',
---     'NeoTreeTitleBar',
---     'NeoTreeVertSplit',
---     'NeoTreeWinSeparator',
---     'NeoTreeWindowsHidden',
---     'NonText',
---     'None',
---     'Normal',
---     'NormalFloat',
---     'NormalNC',
---     'NotifyDEBUGBody',
---     'NotifyDEBUGBorder',
---     'NotifyDEBUGIcon',
---     'NotifyDEBUGTitle',
---     'NotifyERRORBody',
---     'NotifyERRORBorder',
---     'NotifyERRORIcon',
---     'NotifyERRORTitle',
---     'NotifyINFOBody',
---     'NotifyINFOBorder',
---     'NotifyINFOIcon',
---     'NotifyINFOTitle',
---     'NotifyTRACEBody',
---     'NotifyTRACEBorder',
---     'NotifyTRACEIcon',
---     'NotifyTRACETitle',
---     'NotifyWARNBody',
---     'NotifyWARNBorder',
---     'NotifyWARNIcon',
---     'NotifyWARNTitle',
---     'Number',
---     'NvimAnd',
---     'NvimArrow',
---     'NvimAssignment',
---     'NvimAssignmentWithAddition',
---     'NvimAssignmentWithConcatenation',
---     'NvimAssignmentWithSubtraction',
---     'NvimAugmentedAssignment',
---     'NvimBinaryMinus',
---     'NvimBinaryOperator',
---     'NvimBinaryPlus',
---     'NvimCallingParenthesis',
---     'NvimColon',
---     'NvimComma',
---     'NvimComparison',
---     'NvimComparisonModifier',
---     'NvimConcat',
---     'NvimConcatOrSubscript',
---     'NvimContainer',
---     'NvimCurly',
---     'NvimDict',
---     'NvimDivision',
---     'NvimDoubleQuote',
---     'NvimDoubleQuotedBody',
---     'NvimDoubleQuotedEscape',
---     'NvimDoubleQuotedUnknownEscape',
---     'NvimEnvironmentName',
---     'NvimEnvironmentSigil',
---     'NvimFigureBrace',
---     'NvimFloat',
---     'NvimIdentifier',
---     'NvimIdentifierKey',
---     'NvimIdentifierName',
---     'NvimIdentifierScope',
---     'NvimIdentifierScopeDelimiter',
---     'NvimInternalError',
---     'NvimInvalid',
---     'NvimInvalidAnd',
---     'NvimInvalidArrow',
---     'NvimInvalidAssignment',
---     'NvimInvalidAssignmentWithAddition',
---     'NvimInvalidAssignmentWithConcatenation',
---     'NvimInvalidAssignmentWithSubtraction',
---     'NvimInvalidAugmentedAssignment',
---     'NvimInvalidBinaryMinus',
---     'NvimInvalidBinaryOperator',
---     'NvimInvalidBinaryPlus',
---     'NvimInvalidCallingParenthesis',
---     'NvimInvalidColon',
---     'NvimInvalidComma',
---     'NvimInvalidComparison',
---     'NvimInvalidComparisonModifier',
---     'NvimInvalidConcat',
---     'NvimInvalidConcatOrSubscript',
---     'NvimInvalidContainer',
---     'NvimInvalidCurly',
---     'NvimInvalidDelimiter',
---     'NvimInvalidDict',
---     'NvimInvalidDivision',
---     'NvimInvalidDoubleQuote',
---     'NvimInvalidDoubleQuotedBody',
---     'NvimInvalidDoubleQuotedEscape',
---     'NvimInvalidDoubleQuotedUnknownEscape',
---     'NvimInvalidEnvironmentName',
---     'NvimInvalidEnvironmentSigil',
---     'NvimInvalidFigureBrace',
---     'NvimInvalidFloat',
---     'NvimInvalidIdentifier',
---     'NvimInvalidIdentifierKey',
---     'NvimInvalidIdentifierName',
---     'NvimInvalidIdentifierScope',
---     'NvimInvalidIdentifierScopeDelimiter',
---     'NvimInvalidLambda',
---     'NvimInvalidList',
---     'NvimInvalidMod',
---     'NvimInvalidMultiplication',
---     'NvimInvalidNestingParenthesis',
---     'NvimInvalidNot',
---     'NvimInvalidNumber',
---     'NvimInvalidNumberPrefix',
---     'NvimInvalidOperator',
---     'NvimInvalidOptionName',
---     'NvimInvalidOptionScope',
---     'NvimInvalidOptionScopeDelimiter',
---     'NvimInvalidOptionSigil',
---     'NvimInvalidOr',
---     'NvimInvalidParenthesis',
---     'NvimInvalidPlainAssignment',
---     'NvimInvalidRegister',
---     'NvimInvalidSingleQuote',
---     'NvimInvalidSingleQuotedBody',
---     'NvimInvalidSingleQuotedQuote',
---     'NvimInvalidSingleQuotedUnknownEscape',
---     'NvimInvalidSpacing',
---     'NvimInvalidString',
---     'NvimInvalidStringBody',
---     'NvimInvalidStringQuote',
---     'NvimInvalidStringSpecial',
---     'NvimInvalidSubscript',
---     'NvimInvalidSubscriptBracket',
---     'NvimInvalidSubscriptColon',
---     'NvimInvalidTernary',
---     'NvimInvalidTernaryColon',
---     'NvimInvalidUnaryMinus',
---     'NvimInvalidUnaryOperator',
---     'NvimInvalidUnaryPlus',
---     'NvimInvalidValue',
---     'NvimLambda',
---     'NvimList',
---     'NvimMod',
---     'NvimMultiplication',
---     'NvimNestingParenthesis',
---     'NvimNot',
---     'NvimNumber',
---     'NvimNumberPrefix',
---     'NvimOperator',
---     'NvimOptionName',
---     'NvimOptionScope',
---     'NvimOptionScopeDelimiter',
---     'NvimOptionSigil',
---     'NvimOr',
---     'NvimParenthesis',
---     'NvimPlainAssignment',
---     'NvimRegister',
---     'NvimSingleQuote',
---     'NvimSingleQuotedBody',
---     'NvimSingleQuotedQuote',
---     'NvimSingleQuotedUnknownEscape',
---     'NvimSpacing',
---     'NvimString',
---     'NvimStringBody',
---     'NvimStringQuote',
---     'NvimStringSpecial',
---     'NvimSubscript',
---     'NvimSubscriptBracket',
---     'NvimSubscriptColon',
---     'NvimSurroundHighlight',
---     'NvimTernary',
---     'NvimTernaryColon',
---     'NvimUnaryMinus',
---     'NvimUnaryOperator',
---     'NvimUnaryPlus',
---     'Operator',
---     'Pmenu',
---     'PmenuExtra',
---     'PmenuExtraSel',
---     'PmenuKind',
---     'PmenuKindSel',
---     'PmenuMatch',
---     'PmenuMatchSel',
---     'PmenuSbar',
---     'PmenuSel',
---     'PmenuThumb',
---     'PreCondit',
---     'PreProc',
---     'Question',
---     'QuickFixLine',
---     'RedrawDebugClear',
---     'RedrawDebugComposed',
---     'RedrawDebugNormal',
---     'RedrawDebugRecompose',
---     'Removed',
---     'Repeat',
---     'Search',
---     'SignColumn',
---     'SignifyLineAdd',
---     'SignifyLineChange',
---     'SignifyLineDelete',
---     'SnippetTabstop',
---     'Special',
---     'SpecialChar',
---     'SpecialComment',
---     'SpecialKey',
---     'SpellBad',
---     'SpellCap',
---     'SpellLocal',
---     'SpellRare',
---     'Statement',
---     'StatusLine',
---     'StatusLineNC',
---     'StatusLineTerm',
---     'StatusLineTermNC',
---     'StorageClass',
---     'String',
---     'Structure',
---     'Substitute',
---     'TSAnnotation',
---     'TSAttribute',
---     'TSBoolean',
---     'TSCharacter',
---     'TSComment',
---     'TSConditional',
---     'TSConstBuiltin',
---     'TSConstMacro',
---     'TSConstant',
---     'TSConstructor',
---     'TSCurrentScope',
---     'TSDefinition',
---     'TSDefinitionUsage',
---     'TSEmphasis',
---     'TSError',
---     'TSException',
---     'TSField',
---     'TSFloat',
---     'TSFuncBuiltin',
---     'TSFuncMacro',
---     'TSFunction',
---     'TSInclude',
---     'TSKeyword',
---     'TSKeywordFunction',
---     'TSKeywordOperator',
---     'TSLabel',
---     'TSLiteral',
---     'TSMethod',
---     'TSNamespace',
---     'TSNone',
---     'TSNumber',
---     'TSOperator',
---     'TSParameter',
---     'TSParameterReference',
---     'TSProperty',
---     'TSPunctBracket',
---     'TSPunctDelimiter',
---     'TSPunctSpecial',
---     'TSRepeat',
---     'TSStrike',
---     'TSString',
---     'TSStringEscape',
---     'TSStringRegex',
---     'TSStrong',
---     'TSSymbol',
---     'TSTag',
---     'TSTagDelimiter',
---     'TSText',
---     'TSTitle',
---     'TSType',
---     'TSTypeBuiltin',
---     'TSURI',
---     'TSUnderline',
---     'TSVariable',
---     'TSVariableBuiltin',
---     'TabLine',
---     'TabLineFill',
---     'TabLineSel',
---     'Tag',
---     'TelescopeBorder',
---     'TelescopeNormal',
---     'TelescopePreviewBorder',
---     'TelescopePreviewLine',
---     'TelescopePreviewNormal',
---     'TelescopePreviewTitle',
---     'TelescopePromptBorder',
---     'TelescopePromptNormal',
---     'TelescopePromptPrefix',
---     'TelescopePromptTitle',
---     'TelescopeResultsBorder',
---     'TelescopeResultsNormal',
---     'TelescopeResultsTitle',
---     'TelescopeSelection',
---     'TermCursor',
---     'TermCursorNC',
---     'Title',
---     'Todo',
---     'TooLong',
---     'TreesitterContext',
---     'Type',
---     'Typedef',
---     'Underlined',
---     'User1',
---     'User2',
---     'User3',
---     'User4',
---     'User5',
---     'User6',
---     'User7',
---     'User8',
---     'User9',
---     'VertSplit',
---     'Visual',
---     'VisualNC',
---     'VisualNOS',
---     'WarningMsg',
---     'WhichKey',
---     'WhichKeyBorder',
---     'WhichKeyDesc',
---     'WhichKeyGroup',
---     'WhichKeyIcon',
---     'WhichKeyIconAzure',
---     'WhichKeyIconBlue',
---     'WhichKeyIconCyan',
---     'WhichKeyIconGreen',
---     'WhichKeyIconGrey',
---     'WhichKeyIconOrange',
---     'WhichKeyIconPurple',
---     'WhichKeyIconRed',
---     'WhichKeyIconYellow',
---     'WhichKeyNormal',
---     'WhichKeySeparator',
---     'WhichKeyTitle',
---     'WhichKeyValue',
---     'Whitespace',
---     'WildMenu',
---     'WinBar',
---     'WinBarNC',
---     'WinSeparator',
---     'barbecue_basename',
---     'barbecue_context',
---     'barbecue_context_array',
---     'barbecue_context_boolean',
---     'barbecue_context_class',
---     'barbecue_context_constant',
---     'barbecue_context_constructor',
---     'barbecue_context_enum',
---     'barbecue_context_enum_member',
---     'barbecue_context_event',
---     'barbecue_context_field',
---     'barbecue_context_file',
---     'barbecue_context_function',
---     'barbecue_context_interface',
---     'barbecue_context_key',
---     'barbecue_context_method',
---     'barbecue_context_module',
---     'barbecue_context_namespace',
---     'barbecue_context_null',
---     'barbecue_context_number',
---     'barbecue_context_object',
---     'barbecue_context_operator',
---     'barbecue_context_package',
---     'barbecue_context_property',
---     'barbecue_context_string',
---     'barbecue_context_struct',
---     'barbecue_context_type_parameter',
---     'barbecue_context_variable',
---     'barbecue_dirname',
---     'barbecue_ellipsis',
---     'barbecue_fileicon_Nix',
---     'barbecue_modified',
---     'barbecue_normal',
---     'barbecue_separator',
---     'gitcommitBranch',
---     'gitcommitComment',
---     'gitcommitDiscarded',
---     'gitcommitDiscardedFile',
---     'gitcommitDiscardedType',
---     'gitcommitHeader',
---     'gitcommitOverflow',
---     'gitcommitSelected',
---     'gitcommitSelectedFile',
---     'gitcommitSelectedType',
---     'gitcommitSummary',
---     'gitcommitUnmergedFile',
---     'gitcommitUnmergedType',
---     'gitcommitUntracked',
---     'gitcommitUntrackedFile',
---     'lCursor',
---     'lualine_a_command',
---     'lualine_a_inactive',
---     'lualine_a_insert',
---     'lualine_a_normal',
---     'lualine_a_replace',
---     'lualine_a_terminal',
---     'lualine_a_visual',
---     'lualine_b_command',
---     'lualine_b_inactive',
---     'lualine_b_insert',
---     'lualine_b_normal',
---     'lualine_b_replace',
---     'lualine_b_terminal',
---     'lualine_b_visual',
---     'lualine_c_command',
---     'lualine_c_diagnostics_error_command',
---     'lualine_c_diagnostics_error_inactive',
---     'lualine_c_diagnostics_error_insert',
---     'lualine_c_diagnostics_error_normal',
---     'lualine_c_diagnostics_error_replace',
---     'lualine_c_diagnostics_error_terminal',
---     'lualine_c_diagnostics_error_visual',
---     'lualine_c_diagnostics_hint_command',
---     'lualine_c_diagnostics_hint_inactive',
---     'lualine_c_diagnostics_hint_insert',
---     'lualine_c_diagnostics_hint_normal',
---     'lualine_c_diagnostics_hint_replace',
---     'lualine_c_diagnostics_hint_terminal',
---     'lualine_c_diagnostics_hint_visual',
---     'lualine_c_diagnostics_info_command',
---     'lualine_c_diagnostics_info_inactive',
---     'lualine_c_diagnostics_info_insert',
---     'lualine_c_diagnostics_info_normal',
---     'lualine_c_diagnostics_info_replace',
---     'lualine_c_diagnostics_info_terminal',
---     'lualine_c_diagnostics_info_visual',
---     'lualine_c_diagnostics_warn_command',
---     'lualine_c_diagnostics_warn_inactive',
---     'lualine_c_diagnostics_warn_insert',
---     'lualine_c_diagnostics_warn_normal',
---     'lualine_c_diagnostics_warn_replace',
---     'lualine_c_diagnostics_warn_terminal',
---     'lualine_c_diagnostics_warn_visual',
---     'lualine_c_inactive',
---     'lualine_c_insert',
---     'lualine_c_normal',
---     'lualine_c_replace',
---     'lualine_c_terminal',
---     'lualine_c_visual',
---     'lualine_transparent',
---     'nixArgOperator',
---     'nixArgumentDefinition',
---     'nixArgumentDefinitionWithDefault',
---     'nixArgumentEllipsis',
---     'nixArgumentSeparator',
---     'nixAssertExpr',
---     'nixAssertKeyword',
---     'nixAttribute',
---     'nixAttributeAssignment',
---     'nixAttributeDefinition',
---     'nixAttributeDot',
---     'nixAttributeSet',
---     'nixBoolean',
---     'nixBuiltin',
---     'nixComment',
---     'nixConditional',
---     'nixFunctionArgument',
---     'nixFunctionCall',
---     'nixHomePath',
---     'nixIfExpr',
---     'nixIfExprKeyword',
---     'nixInherit',
---     'nixInheritAttributeScope',
---     'nixInheritAttributeSubExpr',
---     'nixInteger',
---     'nixInterpolation',
---     'nixInterpolationDelimiter',
---     'nixInterpolationParam',
---     'nixInvalidSimpleStringEscape',
---     'nixInvalidStringEscape',
---     'nixLetExpr',
---     'nixLetExprKeyword',
---     'nixList',
---     'nixListBracket',
---     'nixNamespacedBuiltin',
---     'nixNull',
---     'nixOperator',
---     'nixParen',
---     'nixPath',
---     'nixPathDelimiter',
---     'nixRecKeyword',
---     'nixSearchPath',
---     'nixSearchPathRef',
---     'nixSimpleBuiltin',
---     'nixSimpleFunctionArgument',
---     'nixSimpleString',
---     'nixSimpleStringSpecial',
---     'nixString',
---     'nixStringDelimiter',
---     'nixStringSpecial',
---     'nixTodo',
---     'nixURI',
---     'nixWithExpr',
---     'nixWithExprKeyword',
---     'qfError',
---     'qfFileName',
---     'qfLineNr',
---     'qfSeparator1',
---     'qfSeparator2',
---     'qfText',
---     'rainbowcol1',
---     'rainbowcol2',
---     'rainbowcol3',
---     'rainbowcol4',
---     'rainbowcol5',
---     'rainbowcol6',
---     'rainbowcol7',
---     -- "BqfPreviewBorder",
---     -- "BqfPreviewBufLabel",
---     -- "BqfPreviewCursor",
---     -- "BqfPreviewCursorLine",
---     -- "BqfPreviewFloat", -- Doesn't work?
---     -- "BqfPreviewRange",
---     -- "BqfPreviewSbar",
---     -- "BqfPreviewThumb",
---     -- "BqfPreviewTitle",
---     -- "TelescopeMatching",
---     -- "TelescopeResultsDiffAdd",
---     -- "TelescopeResultsDiffChange",
---     -- "TelescopeResultsDiffDelete",
---     -- "TelescopeSelection",
---     -- "TelescopeSelectionCaret",
---     -- Barbecue
---     -- Bqf
---     -- Cmp
---     -- Diagnostics
---     -- GitSigns
---     -- Lazy.nvim
---     -- Lualine
---     -- NeoTree
---     -- Telescope
---   },
--- }
+-- vim.cmd('highlight Added ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Bold ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Boolean ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Changed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Character ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpDocumentation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpDocumentationBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpGhostText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrDeprecated ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrDeprecatedDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrMatch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrMatchDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrMatchFuzzy ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemAbbrMatchFuzzyDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKind ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindClass ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindClassDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindColor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindColorDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindConstant ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindConstantDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindConstructor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindConstructorDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEnum ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEnumDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEnumMember ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEnumMemberDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEvent ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindEventDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindField ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFieldDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFileDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFolder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFolderDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFunction ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindFunctionDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindInterface ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindInterfaceDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindKeywordDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindMethod ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindMethodDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindModule ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindModuleDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindOperatorDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindProperty ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindPropertyDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindReference ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindReferenceDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindSnippet ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindSnippetDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindStruct ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindStructDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindTextDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindTypeParameter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindTypeParameterDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindUnit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindUnitDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindValueDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindVariable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemKindVariableDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemMenu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CmpItemMenuDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight ColorColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Comment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight ComplMatchIns ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Conceal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Conditional ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Constant ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CurSearch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Cursor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorIM ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLineFold ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight CursorLineSign ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIBreakpointsCurrentLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIBreakpointsDisabledLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIBreakpointsInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIBreakpointsLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIBreakpointsPath ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUICurrentFrameName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIDecoration ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIEndofBuffer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIFloatBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIFloatNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIFrameName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUILineNumber ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIModifiedValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUINormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUINormalNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIPlayPause ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIPlayPauseNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIRestart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIRestartNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUISource ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepBack ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepBackNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepInto ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepIntoNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepOut ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepOutNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepOver ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStepOverNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStop ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStopNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIStoppedThread ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIThread ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIType ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIUnavailable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIUnavailableNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIVariable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIWatchesEmpty ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIWatchesError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIWatchesValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DapUIWinSelect ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Debug ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Define ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Delimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIcon3DObjectFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIcon3gp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIcon7z ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAOSC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAdvancedAudioCoding ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAlmalinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAlpine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAndroid ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconApp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconApple ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAppleScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArchcraft ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArchlabs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArcoLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArduino ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconArtix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAsc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAsciinema ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAss ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAstro ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAudioInterchangeFileFormat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAutoCADDwg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAutoCADDxf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAvif ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAwk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconAzureCli ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBSPWM ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBabelrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBackup ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBash ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBashProfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBashrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBazel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBazelBuild ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBazelWorkspace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBibTeX ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBicep ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBicepParameters ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBigLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBinaryGLTF ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBlade ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBlender ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBlueprint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBmp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBoundaryRepresentation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBrewfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBudgie ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBz ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBz2 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBz3 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconBzl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCMake ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCMakeLists ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCPlusPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCPlusPlusModule ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCSharpProject ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCache ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCantorrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCentos ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCheckhealth ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCinnamon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCjs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconClojure ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconClojureC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconClojureDart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconClojureJS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCobol ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCoffee ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconConf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconConfigRu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconConfiguration ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCpp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCppm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCrdownload ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCrystal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCrystalLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCsh ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCson ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCss ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCsv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCts ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCxx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconCxxm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDconf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDebian ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDeepin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDesktopEntry ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDevuan ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDiff ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDll ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDoc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDockerfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDocx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDot ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDownload ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDrools ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDropbox ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDsStore ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconDump ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEbook ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEditorConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEdn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEex ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEjs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconElementary ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconElf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconElisp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconElm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEmbeddedOpenTypeFont ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEndeavour ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEnlightenment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEnv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEpp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEpub ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconErb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconErl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEslintIgnore ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEslintrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconEx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconExe ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconExs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFIGletFontControl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFIGletFontFormat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFavicon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFdmdownload ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFedora ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFennel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFish ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFluxbox ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFortran ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFreeBSD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFreeCAD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFreeCADConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFreeLosslessAudioCodec ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFsharp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFsi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFsscript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFsx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconFusion360 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGCode ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGDScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGIMP ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGNOME ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGTK ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGarudaLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGemfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGemspec ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGentoo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGif ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitAttributes ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitCommit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitIgnore ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitLogo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitModules ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGitlabCI ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGodotProject ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGodotTextResource ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGodotTextScene ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGradleBuildScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGradleProperties ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGradleSettings ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGradleWrapperProperties ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGradleWrapperScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGraphQL ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGroovy ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGruntfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGuix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGulpfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGvimrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconGz ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconH ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHaml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHaxe ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHbs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHeex ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHexadecimal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHh ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHpp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHrl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHtm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHtml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHuff ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHurl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHxx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHyperbolaGNULinuxLibre ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconHyprland ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIcal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIcalendar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIco ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIcs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIfb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIfc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIge ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIges ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIgs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIllumos ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconImage ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconImg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconImportConfiguration ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIni ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIso ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconIxx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJWM ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJava ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJavaScriptReactSpec ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJavaScriptReactTest ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJpeg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJpegXl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJpg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJson ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJson5 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJsonc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconJsx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKDEPlasma ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKDEglobals ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKDEneon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKalgebrarc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKali ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKbx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKdb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKdbx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKdenlive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKdenliveLayoutsrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKdenliverc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKiCad ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKiCadCache ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKiCadFootprintTable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKiCadSymbolTable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKotlin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKotlinScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKrita ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKritadisplayrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKritarc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKsh ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconKubuntu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLXDE ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLXDEConfigFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLXLE ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLXQt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLXQtConfigFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLeex ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLess ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLhs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLib ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLibrecadFontFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLicense ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLinuxKernelObject ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLiquid ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLocOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLocalization ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLock ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLog ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLogos ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLua ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLuau ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconLuaurc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconM3u ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconM3u8 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconM4V ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMATE ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMOV ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMPEG4 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMPEGAudioLayerIII ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMXLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMageia ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMagnet ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMailmap ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMakefile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconManjaro ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMarkdown ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMaterial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMaven ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMd5 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMdx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMixLock ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMjs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMkv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMli ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMobi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMonkeysAudio ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMotoko ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMp4 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMpp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMpv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMts ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconMustache ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNPMIgnore ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNPMrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNim ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNixOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNodeModules ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNotebook ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNswag ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconNushell ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconObjectFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconObjectiveC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconObjectiveCPlusPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOggVorbis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOpenBSD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOpenSCAD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOpenTypeFont ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOpusAudioFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOrgMode ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconOut ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPKGBUILD ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPackageJson ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPackageLockJson ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPackedResource ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconParabolaGNULinuxLibre ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconParrot ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPatch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPdf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPhp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPlatformio ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPls ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPng ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPop_OS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPpt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPrettierConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPrisma ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconProcfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconProlog ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPrusaSlicer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPsManifestfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPsScriptModulefile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPsScriptfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPsb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPsd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPub ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPulseCodeModulation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPuppyLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPxd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPxi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPy ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPyc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPyd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPyi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPyo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconPyx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconQt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconQtile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconQubesOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconQuery ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconR ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRake ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRakefile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRaspberryPiOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRazorPage ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconReScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconReScriptInterface ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRedhat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRlib ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRmd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRockyLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRproj ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconRss ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSRCINFO ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSabayon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSass ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconScala ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconScalaScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconScheme ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconScss ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSettingsJson ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSh ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSha1 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSha224 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSha256 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSha384 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSha512 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSharedObject ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSignature ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSketchUp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSlackware ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSlim ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSln ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSolidWorksAsm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSolidWorksPrt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSolidity ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSolus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSolveSpace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSpecJs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSpecTs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSql ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSrt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSsa ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconStaticLibraryArchive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSte ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconStep ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconStp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconStyl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSub ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSublime ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSuo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSvelte ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSvelteConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSvg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSway ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSwift ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconSystemVerilog ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTFVars ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTSConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTails ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTailwindConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTcl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTempl ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTerminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTerraform ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTestJs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTestTs ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTex ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTgz ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconThunderbird ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTmux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconToml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTorrent ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTrisquelGNULinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTrueTypeFont ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTsx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTwig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTxt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTxz ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypeScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypeScriptDeclaration ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypeScriptReactSpec ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypeScriptReactTest ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypoScript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypoScriptConfig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconTypoScriptSetup ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconUI ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconUbuntu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVHDL ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVLC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVRML ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVagrantfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVala ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVanillaOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVerilog ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVim ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVimrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVlang ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVoid ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVsix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconVue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWasm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWaveformAudioFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWebOpenFontFormat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWebm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWebmanifest ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWebp ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWebpack ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWeston ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWindows ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconWindowsMediaAudio ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXInitrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXSettingsdConf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXaml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXauthority ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXcLocalization ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXcPlayground ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXeroLinux ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXfce ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXls ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXlsx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXorgConf ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXpi ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXresources ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXsession ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconXz ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconYaml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconYml ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZig ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZigObjectNotation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZip ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZorin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZsh ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZshenv ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZshprofile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZshrc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconZst ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconapk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconawesome ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconcuda ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconcudah ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIcondwm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconi3 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconopenSUSE ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconpostmarketOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconsbt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DevIconxmonad ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticDeprecated ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticFloatingError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticFloatingHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticFloatingInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticFloatingOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticFloatingWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticSignError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticSignHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticSignInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticSignOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticSignWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineInformation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnderlineWarning ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticUnnecessary ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualLinesError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualLinesHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualLinesInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualLinesOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualLinesWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualTextError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualTextHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualTextInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualTextOk ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticVirtualTextWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiagnosticWarn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffAdd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffAdded ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffChange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffNewFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffRemoved ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DiffText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Directory ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight DressingSelectIdx ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Error ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight ErrorMsg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Exception ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Float ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatFooter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatShadow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatShadowThrough ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FloatTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FoldColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Folded ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Function ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBackdrop ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufFlagAlt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufFlagCur ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufId ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaBufNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaCursor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaCursorLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaCursorLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaDirIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaDirPart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFilePart ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfCursorLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfGutter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfHeader ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfInfo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfMarker ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfMatch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfPointer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfPrompt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfQuery ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfScrollbar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaFzfSpinner ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaHeaderBind ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaHeaderText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaHelpBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaHelpNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaLivePrompt ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaLiveSym ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaPathColNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaPathLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaPreviewBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaPreviewNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaPreviewTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaScrollBorderBackCompat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaScrollBorderEmpty ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaScrollBorderFull ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaScrollFloatEmpty ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaScrollFloatFull ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaSearch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaTabMarker ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaTabTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight FzfLuaTitleFlags ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterAdd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterAddLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterAddLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterChange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterChangeDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterChangeLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterChangeLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterDeleteLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitGutterDeleteLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAdd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddLnInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsAddPreview ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangeCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangeInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangeLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangeLnInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangeNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangedelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangedeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangedeleteLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsChangedeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsCurrentLineBlame ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteLnInline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeletePreview ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteVirtLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsDeleteVirtLnInLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedAdd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedAddCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedAddLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedAddNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangeCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangeLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangeNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangedelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangedeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangedeleteLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedChangedeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedDeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedDeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedTopdelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedTopdeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedTopdeleteLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedTopdeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedUntracked ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedUntrackedCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedUntrackedLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsStagedUntrackedNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsTopdelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsTopdeleteCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsTopdeleteLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsTopdeleteNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsUntracked ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsUntrackedCul ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsUntrackedLn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsUntrackedNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight GitSignsVirtLnum ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IblIndent ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IblScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IblWhitespace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Identifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Ignore ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IlluminatedWordRead ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IlluminatedWordText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IlluminatedWordWrite ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IncSearch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Include ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IndentBlanklineChar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight IndentBlanklineContextChar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Integer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Italic ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Keyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Label ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LazyButton ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LazyButtonActive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LazyDimmed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LineNrAbove ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LineNrBelow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspCodeLens ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspCodeLensSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsDefaultError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsDefaultHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsDefaultInformation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsDefaultWarning ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsUnderlineError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsUnderlineHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsUnderlineInformation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspDiagnosticsUnderlineWarning ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspInlayHint ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspReferenceRead ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspReferenceTarget ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspReferenceText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspReferenceWrite ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight LspSignatureActiveParameter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Macro ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MatchParen ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniCompletionActiveParameter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIcons ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsAzure ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsBlue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsCyan ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsGreen ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsGrey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsOrange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsPurple ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsRed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MiniIconsYellow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight ModeMsg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MoreMsg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MsgArea ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight MsgSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeBufferNumber ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeCursorLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeDimText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeDirectoryIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeDirectoryName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeDotfile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeEndOfBuffer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeExpander ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFadeText1 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFadeText2 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFileIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFileName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFileNameOpened ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFileStats ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFileStatsHeader ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFilterTerm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFloatBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFloatNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeFloatTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitAdded ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitConflict ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitDeleted ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitIgnored ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitModified ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitRenamed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitStaged ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitUnstaged ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeGitUntracked ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeHiddenByName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeIndentMarker ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeMessage ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeModified ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeNormalNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreePreview ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeRootName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeSignColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeStatusLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeStatusLineNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeSymbolicLinkTarget ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeTabActive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeTabInactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeTabSeparatorActive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeTabSeparatorInactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeTitleBar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeVertSplit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeWinSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NeoTreeWindowsHidden ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NonText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight None ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NormalFloat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NormalNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyDEBUGBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyDEBUGBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyDEBUGIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyDEBUGTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyERRORBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyERRORBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyERRORIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyERRORTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyINFOBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyINFOBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyINFOIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyINFOTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyTRACEBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyTRACEBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyTRACEIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyTRACETitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyWARNBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyWARNBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyWARNIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NotifyWARNTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Number ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAnd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimArrow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAssignmentWithAddition ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAssignmentWithConcatenation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAssignmentWithSubtraction ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimAugmentedAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimBinaryMinus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimBinaryOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimBinaryPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimCallingParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimComma ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimComparison ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimComparisonModifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimConcat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimConcatOrSubscript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimContainer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimCurly ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDict ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDivision ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDoubleQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDoubleQuotedBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDoubleQuotedEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimDoubleQuotedUnknownEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimEnvironmentName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimEnvironmentSigil ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimFigureBrace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimFloat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimIdentifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimIdentifierKey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimIdentifierName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimIdentifierScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimIdentifierScopeDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInternalError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalid ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAnd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidArrow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAssignmentWithAddition ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAssignmentWithConcatenation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAssignmentWithSubtraction ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidAugmentedAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidBinaryMinus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidBinaryOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidBinaryPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidCallingParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidComma ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidComparison ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidComparisonModifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidConcat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidConcatOrSubscript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidContainer ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidCurly ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDict ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDivision ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDoubleQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDoubleQuotedBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDoubleQuotedEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidDoubleQuotedUnknownEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidEnvironmentName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidEnvironmentSigil ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidFigureBrace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidFloat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidIdentifier ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidIdentifierKey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidIdentifierName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidIdentifierScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidIdentifierScopeDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidLambda ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidList ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidMod ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidMultiplication ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidNestingParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidNot ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidNumber ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidNumberPrefix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOptionName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOptionScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOptionScopeDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOptionSigil ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidOr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidPlainAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidRegister ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSingleQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSingleQuotedBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSingleQuotedQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSingleQuotedUnknownEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSpacing ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidString ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidStringBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidStringQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidStringSpecial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSubscript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSubscriptBracket ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidSubscriptColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidTernary ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidTernaryColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidUnaryMinus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidUnaryOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidUnaryPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimInvalidValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimLambda ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimList ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimMod ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimMultiplication ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimNestingParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimNot ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimNumber ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimNumberPrefix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOptionName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOptionScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOptionScopeDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOptionSigil ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimOr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimParenthesis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimPlainAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimRegister ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSingleQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSingleQuotedBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSingleQuotedQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSingleQuotedUnknownEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSpacing ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimString ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimStringBody ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimStringQuote ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimStringSpecial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSubscript ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSubscriptBracket ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSubscriptColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimSurroundHighlight ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimTernary ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimTernaryColon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimUnaryMinus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimUnaryOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight NvimUnaryPlus ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Operator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Pmenu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuExtra ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuExtraSel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuKind ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuKindSel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuMatch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuMatchSel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuSbar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuSel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PmenuThumb ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PreCondit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight PreProc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Question ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight QuickFixLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight RedrawDebugClear ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight RedrawDebugComposed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight RedrawDebugNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight RedrawDebugRecompose ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Removed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Repeat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Search ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SignColumn ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SignifyLineAdd ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SignifyLineChange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SignifyLineDelete ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SnippetTabstop ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Special ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpecialChar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpecialComment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpecialKey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpellBad ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpellCap ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpellLocal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight SpellRare ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Statement ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StatusLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StatusLineNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StatusLineTerm ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StatusLineTermNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight StorageClass ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight String ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Structure ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Substitute ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSAnnotation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSAttribute ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSBoolean ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSCharacter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSComment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSConditional ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSConstBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSConstMacro ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSConstant ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSConstructor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSCurrentScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSDefinition ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSDefinitionUsage ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSEmphasis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSException ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSField ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSFloat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSFuncBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSFuncMacro ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSFunction ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSInclude ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSKeywordFunction ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSKeywordOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSLabel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSLiteral ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSMethod ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSNamespace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSNone ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSNumber ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSParameter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSParameterReference ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSProperty ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSPunctBracket ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSPunctDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSPunctSpecial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSRepeat ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSStrike ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSString ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSStringEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSStringRegex ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSStrong ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSSymbol ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSTag ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSTagDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSType ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSTypeBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSURI ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSUnderline ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSVariable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TSVariableBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TabLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TabLineFill ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TabLineSel ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Tag ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePreviewBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePreviewLine ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePreviewNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePreviewTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePromptBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePromptNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePromptPrefix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopePromptTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeResultsBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeResultsNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeResultsTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TelescopeSelection ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TermCursor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TermCursorNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Title ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Todo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TooLong ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight TreesitterContext ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Type ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Typedef ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Underlined ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User1 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User2 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User3 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User4 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User5 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User6 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User7 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User8 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight User9 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight VertSplit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight VisualNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight VisualNOS ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WarningMsg ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyBorder ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyDesc ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyGroup ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIcon ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconAzure ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconBlue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconCyan ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconGreen ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconGrey ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconOrange ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconPurple ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconRed ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyIconYellow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyNormal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeySeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyTitle ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WhichKeyValue ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight Whitespace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WildMenu ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WinBar ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WinBarNC ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight WinSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_basename ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_array ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_boolean ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_class ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_constant ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_constructor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_enum ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_enum_member ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_event ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_field ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_file ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_function ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_interface ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_key ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_method ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_module ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_namespace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_null ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_number ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_object ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_operator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_package ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_property ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_string ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_struct ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_type_parameter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_context_variable ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_dirname ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_ellipsis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_fileicon_Nix ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_modified ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight barbecue_separator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitBranch ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitComment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitDiscarded ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitDiscardedFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitDiscardedType ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitHeader ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitOverflow ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitSelected ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitSelectedFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitSelectedType ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitSummary ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitUnmergedFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitUnmergedType ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitUntracked ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight gitcommitUntrackedFile ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lCursor ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_a_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_b_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_error_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_hint_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_info_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_command ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_diagnostics_warn_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_inactive ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_insert ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_normal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_replace ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_terminal ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_c_visual ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight lualine_transparent ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixArgOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixArgumentDefinition ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixArgumentDefinitionWithDefault ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixArgumentEllipsis ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixArgumentSeparator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAssertExpr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAssertKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAttribute ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAttributeAssignment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAttributeDefinition ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAttributeDot ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixAttributeSet ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixBoolean ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixComment ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixConditional ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixFunctionArgument ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixFunctionCall ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixHomePath ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixIfExpr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixIfExprKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInherit ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInheritAttributeScope ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInheritAttributeSubExpr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInteger ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInterpolation ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInterpolationDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInterpolationParam ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInvalidSimpleStringEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixInvalidStringEscape ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixLetExpr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixLetExprKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixList ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixListBracket ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixNamespacedBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixNull ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixOperator ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixParen ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixPath ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixPathDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixRecKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSearchPath ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSearchPathRef ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSimpleBuiltin ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSimpleFunctionArgument ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSimpleString ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixSimpleStringSpecial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixString ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixStringDelimiter ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixStringSpecial ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixTodo ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixURI ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixWithExpr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight nixWithExprKeyword ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfError ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfFileName ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfLineNr ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfSeparator1 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfSeparator2 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight qfText ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol1 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol2 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol3 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol4 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol5 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol6 ctermbg=NONE guibg=NONE')
+-- vim.cmd('highlight rainbowcol7 ctermbg=NONE guibg=NONE')
