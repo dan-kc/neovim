@@ -37,7 +37,7 @@ require('lualine').setup {
     lualine_x = {
       'lsp_progress',
     },
-    lualine_y = { { 'encoding' } },
+    lualine_y = { { 'filename', path = 0 }, { 'encoding' } },
     lualine_z = { { 'branch', icon = icons.git.symbol } },
   },
   extensions = { 'fugitive', 'fzf', 'toggleterm', 'quickfix' },
