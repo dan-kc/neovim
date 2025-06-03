@@ -95,7 +95,7 @@ lspconfig.ts_ls.setup {
 lspconfig.rust_analyzer.setup {}
 lspconfig.gopls.setup {}
 lspconfig.terraformls.setup {
-  cmd = { 'terraform-lsp' },
+  cmd = { 'terraform-ls' },
 }
 lspconfig.pyright.setup {}
 lspconfig.clangd.setup {}
