@@ -78,11 +78,7 @@ lspconfig.lua_ls.setup {
   },
 }
 
--- lspconfig.shopify_theme_ls.setup({})
-
--- lspconfig.elixirls.setup({
---   cmd = { "/opt/homebrew/bin/elixir-ls" },
--- })
+lspconfig.elixirls.setup {}
 
 lspconfig.shopify_theme_ls.setup {}
 
