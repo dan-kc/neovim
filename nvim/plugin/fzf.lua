@@ -21,7 +21,11 @@ fzf.setup {
 }
 
 vim.keymap.set('n', '<leader>f', function()
-  fzf.files { hidden = true }
+  fzf.files {}
+end, { desc = 'Find files' })
+
+vim.keymap.set('n', '<leader>F', function()
+  fzf.files { hidden = true, no_ignore = true }
 end, { desc = 'Find files' })
 
 vim.keymap.set('n', "<leader>'", function()
@@ -29,7 +33,7 @@ vim.keymap.set('n', "<leader>'", function()
 end, { desc = 'Resume search' })
 
 vim.keymap.set('n', '<leader>/', function()
-  fzf.oldfiles { cwd = vim.loop.cwd() }
+  fzf.oldfiles { cwd = vim.loop.cwd(), include_current_session = true }
 end, { desc = 'Old files' })
 
 vim.keymap.set('n', '<leader>sg', function()
