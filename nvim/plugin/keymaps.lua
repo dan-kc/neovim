@@ -154,4 +154,4 @@ keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'move [u]p half-page and center' })
 keymap.set('n', '<C-f>', '<C-f>zz', { desc = 'move DOWN [f]ull-page and center' })
 keymap.set('n', '<C-b>', '<C-b>zz', { desc = 'move UP full-page and center' })
 
-keymap.set('n', '<leader>yp', ":let @+=expand('%:p')<cr>", { desc = 'Yank path' })
+keymap.set('n', '<leader>yp', ":let @+=expand('%:p')<CR>", { desc = 'Yank path' })
