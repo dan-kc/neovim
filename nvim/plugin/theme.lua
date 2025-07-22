@@ -3,7 +3,7 @@ if vim.g.did_load_theme_plugin then
 end
 vim.g.did_load_theme_plugin = true
 
-local base16_yaml_file = vim.fn.expand('~/.local/share/flavours/base16/schemes/generated/generated.yaml')
+local base16_yaml_file = vim.fn.expand('~/.config/theme.yaml')
 local base16_palette = {}
 
 if vim.fn.filereadable(base16_yaml_file) == 1 then
