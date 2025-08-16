@@ -28,6 +28,7 @@ require('conform').setup {
     handlebars = { 'prettier' },
     liquid = { 'prettier' },
     toml = { 'taplo' },
+    astro = { 'prettier' },
   },
   formatters = {
     tfmt = {
