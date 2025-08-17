@@ -94,7 +94,13 @@ lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 lspconfig.pyright.setup {}
-lspconfig.astro.setup {}
+lspconfig.astro.setup {
+  init_options = {
+    typescript = {
+      tsdk = './node_modules/typescript/lib',
+    },
+  },
+}
 lspconfig.clangd.setup {}
 
 -- require("lspconfig").jsonls.setup({
