@@ -94,6 +94,7 @@ lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 lspconfig.pyright.setup {}
+lspconfig.astro.setup {}
 lspconfig.clangd.setup {}
 
 -- require("lspconfig").jsonls.setup({
