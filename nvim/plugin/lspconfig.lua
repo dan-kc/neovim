@@ -112,13 +112,13 @@ lspconfig.clangd.setup {}
 --   },
 -- })
 
--- lspconfig.tailwindcss.setup({
---   settings = {
---     tailwindcss = {
---       filetypes_exclude = { "markdown" },
---     },
---   },
--- })
+lspconfig.tailwindcss.setup {
+  settings = {
+    tailwindcss = {
+      filetypes_exclude = { 'markdown' },
+    },
+  },
+}
 
 -- lspconfig.yamlls.setup({
 --   settings = {
