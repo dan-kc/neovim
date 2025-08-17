@@ -77,24 +77,24 @@ let
 
   extraPackages = with pkgs; [
     # lua-language-server
-    # stylua
+    stylua
 
     # nil
-    # nixfmt-rfc-style
+    nixfmt-rfc-style
 
     # rust-analyzer
-    # rustfmt
+    rustfmt
 
     # typescript-language-server
-    # nodePackages.prettier
+    nodePackages.prettier
 
     # gopls
-    # gofumpt
+    gofumpt
 
     # taplo # TOML LSP and formatter
 
     # pyright
-    # black
+    black
 
     # clang-tools
   ];
