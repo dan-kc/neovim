@@ -17,6 +17,8 @@ require('conform').setup {
     html = { 'djlint' },
     typescript = { 'prettier' },
     javascript = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    javascriptreact = { 'prettier' },
     tsx = { 'prettier' },
     jsx = { 'prettier' },
     css = { 'prettier' },
