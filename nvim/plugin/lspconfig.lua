@@ -96,8 +96,9 @@ lspconfig.terraformls.setup {
 
 -- lspconfig.pyright.setup {}
 
-lspconfig.ty.setup {}
+-- lspconfig.ty.setup {}
 lspconfig.ruff.setup {}
+vim.lsp.enable 'ty'
 
 -- lspconfig.pylsp.setup {
 --   plugins = {
