@@ -94,7 +94,7 @@ lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 -- lspconfig.pyright.setup {}
-lspconfig.pyls.setup {
+lspconfig.pylsp.setup {
   plugins = {
     pyls_mypy = { enabled = true },
   },
