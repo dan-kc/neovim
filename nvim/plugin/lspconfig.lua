@@ -93,7 +93,8 @@ lspconfig.gopls.setup {}
 lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
-lspconfig.pyright.setup {}
+-- lspconfig.pyright.setup {}
+lspconfig.mypy.setup {}
 lspconfig.astro.setup {
   init_options = {
     typescript = {
