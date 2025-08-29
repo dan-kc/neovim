@@ -94,7 +94,11 @@ lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 -- lspconfig.pyright.setup {}
-lspconfig.mypy.setup {}
+lspconfig.pyls.setup {
+  plugins = {
+    pyls_mypy = { enabled = true },
+  },
+}
 lspconfig.astro.setup {
   init_options = {
     typescript = {
