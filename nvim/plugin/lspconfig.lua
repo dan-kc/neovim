@@ -94,18 +94,9 @@ lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 
--- lspconfig.pyright.setup {}
-
--- lspconfig.ty.setup {}
-lspconfig.ruff.setup {}
--- vim.lsp.enable 'ty'
 vim.lsp.enable 'basedpyright'
+vim.lsp.enable 'ruff'
 
--- lspconfig.pylsp.setup {
---   plugins = {
---     pyls_mypy = { enabled = true },
---   },
--- }
 lspconfig.astro.setup {
   init_options = {
     typescript = {
