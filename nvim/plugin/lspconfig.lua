@@ -93,6 +93,7 @@ lspconfig.gopls.setup {}
 lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
+
 -- lspconfig.pyright.setup {}
 lspconfig.ruff.setup {}
 -- lspconfig.pylsp.setup {

@@ -12,7 +12,10 @@ require('conform').setup {
     terraform = { 'tfmt' },
     tf = { 'tfmt' },
     hcl = { 'tfmt' },
-    python = { 'black' },
+    python = { 'ruff_format' },
+    -- ruff_fix - An extremely fast Python linter, written in Rust. Fix lint errors.
+    -- ruff_format - An extremely fast Python linter, written in Rust. Formatter subcommand.
+    -- ruff_organize_imports -
     c = { 'clang_format' },
     html = { 'djlint' },
     typescript = { 'prettier' },
