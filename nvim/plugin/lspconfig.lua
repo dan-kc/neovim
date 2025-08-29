@@ -95,7 +95,10 @@ lspconfig.terraformls.setup {
 }
 
 -- lspconfig.pyright.setup {}
+
+lspconfig.ty.setup {}
 lspconfig.ruff.setup {}
+
 -- lspconfig.pylsp.setup {
 --   plugins = {
 --     pyls_mypy = { enabled = true },
