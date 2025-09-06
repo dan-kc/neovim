@@ -88,14 +88,33 @@ lspconfig.ts_ls.setup {
   },
 }
 
-lspconfig.rust_analyzer.setup {}
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      imports = {
+        granularity = {
+          group = 'module',
+        },
+        prefix = 'self',
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+}
 lspconfig.gopls.setup {}
 lspconfig.terraformls.setup {
   cmd = { 'terraform-ls', 'serve' },
 }
 
-vim.lsp.enable 'basedpyright'
-vim.lsp.enable 'ruff'
+vim.lsp.enable('basedpyright')
+vim.lsp.enable('ruff')
 
 lspconfig.astro.setup {
   init_options = {

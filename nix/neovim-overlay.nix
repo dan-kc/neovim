@@ -80,10 +80,10 @@ let
     stylua
 
     # nil
-    nixfmt-rfc-style
+    # nixfmt-rfc-style
 
     # rust-analyzer
-    rustfmt
+    # rustfmt
 
     # typescript-language-server
     nodePackages.prettier
