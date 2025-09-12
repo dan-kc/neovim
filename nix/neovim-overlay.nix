@@ -44,6 +44,9 @@ let
     vim-unimpaired
     nvim-surround
     nvim-unception
+    lze
+    undotree
+    crates-nvim
 
     # Packages that are needed for other plugins
     statuscol-nvim

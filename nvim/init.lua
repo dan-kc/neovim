@@ -62,3 +62,49 @@ cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 
 -- let sqlite.lua (which some plugins depend on) know where to find sqlite
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
+
+-- Initialise plugins
+require('lze').load {
+  {
+    'yazi',
+    keys = {
+      -- Create a key mapping and lazy-load when it is used
+      { '<leader>e', '<CMD>Yazi<CR>', desc = 'Open Yazi' },
+      -- vim.keymap.set('n', '<leader>e', '<cmd>Yazi<cr>', { desc = 'Open Yazi' })
+      -- vim.keymap.set('n', '<leader>E', '<cmd>Yazi cwd<cr>', { desc = 'Open Yazi CWD' })
+    },
+    after = function()
+      require('yazi').setup {
+        open_for_directories = false,
+      }
+    end,
+  },
+  {
+    "stay-centered",
+    after = function()
+      require('stay-centered').setup {
+        skip_filetypes = {},
+        -- allows scrolling to move the cursor without centering, default recommended
+        allow_scroll_move = true,
+        -- temporarily disables plugin on left-mouse down, allows natural mouse selection
+        -- try disabling if plugin causes lag, function uses vim.on_key
+        disable_on_mouse = true,
+      }
+    end,
+  },
+  {
+    'mbbill/undotree',
+    cmd = {
+      'UndotreeToggle',
+      'UndotreeHide',
+      'UndotreeShow',
+      'UndotreeFocus',
+      'UndotreePersistUndo',
+    },
+    keys = { { '<leader>U', '<cmd>UndotreeToggle<CR>', mode = { 'n' }, desc = 'Undo Tree' } },
+    before = function(_)
+      vim.g.undotree_WindowLayout = 1
+      vim.g.undotree_SplitWidth = 40
+    end,
+  },
+}
