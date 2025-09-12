@@ -1,0 +1,169 @@
+if vim.g.did_load_plugins_plugin then
+  return
+end
+vim.g.did_load_plugins_plugin = true
+
+require('nvim-surround').setup()
+
+-- keymaps = {
+--       normal = "ys",
+--       normal_cur = "yss",
+--       visual = "S",
+--       delete = "ds",
+--       change = "cs",
+--   },
+--   surrounds = {
+--       ["("] = {
+--           add = { "( ", " )" },
+--           find = function()
+--               return M.get_selection({ motion = "a(" })
+--           end,
+--           delete = "^(. ?)().-( ?.)()$",
+--       },
+--       [")"] = {
+--           add = { "(", ")" },
+--           find = function()
+--               return M.get_selection({ motion = "a)" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["{"] = {
+--           add = { "{ ", " }" },
+--           find = function()
+--               return M.get_selection({ motion = "a{" })
+--           end,
+--           delete = "^(. ?)().-( ?.)()$",
+--       },
+--       ["}"] = {
+--           add = { "{", "}" },
+--           find = function()
+--               return M.get_selection({ motion = "a}" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["<"] = {
+--           add = { "< ", " >" },
+--           find = function()
+--               return M.get_selection({ motion = "a<" })
+--           end,
+--           delete = "^(. ?)().-( ?.)()$",
+--       },
+--       [">"] = {
+--           add = { "<", ">" },
+--           find = function()
+--               return M.get_selection({ motion = "a>" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["["] = {
+--           add = { "[ ", " ]" },
+--           find = function()
+--               return M.get_selection({ motion = "a[" })
+--           end,
+--           delete = "^(. ?)().-( ?.)()$",
+--       },
+--       ["]"] = {
+--           add = { "[", "]" },
+--           find = function()
+--               return M.get_selection({ motion = "a]" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["'"] = {
+--           add = { "'", "'" },
+--           find = function()
+--               return M.get_selection({ motion = "a'" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ['"'] = {
+--           add = { '"', '"' },
+--           find = function()
+--               return M.get_selection({ motion = 'a"' })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["`"] = {
+--           add = { "`", "`" },
+--           find = function()
+--               return M.get_selection({ motion = "a`" })
+--           end,
+--           delete = "^(.)().-(.)()$",
+--       },
+--       ["i"] = { -- TODO: Add find/delete/change functions
+--           add = function()
+--               local left_delimiter = M.get_input("Enter the left delimiter: ")
+--               local right_delimiter = left_delimiter and M.get_input("Enter the right delimiter: ")
+--               if right_delimiter then
+--                   return { { left_delimiter }, { right_delimiter } }
+--               end
+--           end,
+--           find = function() end,
+--           delete = function() end,
+--       },
+--       ["t"] = {
+--           add = function()
+--               local user_input = M.get_input("Enter the HTML tag: ")
+--               if user_input then
+--                   local element = user_input:match("^<?([^%s>]*)")
+--                   local attributes = user_input:match("^<?[^%s>]*%s+(.-)>?$")
+--
+--                   local open = attributes and element .. " " .. attributes or element
+--                   local close = element
+--
+--                   return { { "<" .. open .. ">" }, { "</" .. close .. ">" } }
+--               end
+--           end,
+--           find = function()
+--               return M.get_selection({ motion = "at" })
+--           end,
+--           delete = "^(%b<>)().-(%b<>)()$",
+--           change = {
+--               target = "^<([^%s<>]*)().-([^/]*)()>$",
+--               replacement = function()
+--                   local user_input = M.get_input("Enter the HTML tag: ")
+--                   if user_input then
+--                       local element = user_input:match("^<?([^%s>]*)")
+--                       local attributes = user_input:match("^<?[^%s>]*%s+(.-)>?$")
+--
+--                       local open = attributes and element .. " " .. attributes or element
+--                       local close = element
+--
+--                       return { { open }, { close } }
+--                   end
+--               end,
+--           },
+--       },
+--       ["T"] = {
+--           add = function()
+--               local user_input = M.get_input("Enter the HTML tag: ")
+--               if user_input then
+--                   local element = user_input:match("^<?([^%s>]*)")
+--                   local attributes = user_input:match("^<?[^%s>]*%s+(.-)>?$")
+--
+--                   local open = attributes and element .. " " .. attributes or element
+--                   local close = element
+--
+--                   return { { "<" .. open .. ">" }, { "</" .. close .. ">" } }
+--               end
+--           end,
+--           find = function()
+--               return M.get_selection({ motion = "at" })
+--           end,
+--           delete = "^(%b<>)().-(%b<>)()$",
+--           change = {
+--               target = "^<([^>]*)().-([^/]*)()>$",
+--               replacement = function()
+--                   local user_input = M.get_input("Enter the HTML tag: ")
+--                   if user_input then
+--                       local element = user_input:match("^<?([^%s>]*)")
+--                       local attributes = user_input:match("^<?[^%s>]*%s+(.-)>?$")
+--
+--                       local open = attributes and element .. " " .. attributes or element
+--                       local close = element
+--
+--                       return { { open }, { close } }
+--                   end
+--               end,
+--           },
+--       },

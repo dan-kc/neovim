@@ -6,6 +6,19 @@ vim.g.did_load_lspconfig_plugin = true
 local icons = require('user.icons')
 local lspconfig = require('lspconfig')
 
+-- Function to handle server start and log messages
+local function on_init_handler(client)
+  if not client.handlers then
+    -- Server didn't start properly (e.g., executable not found)
+    vim.notify(
+      string.format("LSP: '%s' server did not start. Check if it's installed.", client.name),
+      vim.log.levels.INFO
+    )
+    return false -- Prevent lspconfig from attaching a client that didn't start
+  end
+  return true -- Allow lspconfig to attach
+end
+
 -- Defaults are not working for some reason.
 lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
   diagnostics = {
@@ -47,9 +60,14 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-lspconfig.nil_ls.setup {}
+vim.lsp.enable('nil_ls')
+vim.lsp.enable('gopls')
+vim.lsp.enable('basedpyright')
+vim.lsp.enable('ruff')
+vim.lsp.enable('elixirls')
+vim.lsp.enable('shopify_theme_ls')
 
-lspconfig.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = {
@@ -76,19 +94,17 @@ lspconfig.lua_ls.setup {
       enable = false,
     },
   },
-}
+})
+vim.lsp.enable('lua_ls')
 
-lspconfig.elixirls.setup {}
-
-lspconfig.shopify_theme_ls.setup {}
-
-lspconfig.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   settings = {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   },
-}
+})
+vim.lsp.enable('ts_ls')
 
-lspconfig.rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
   settings = {
     ['rust-analyzer'] = {
       imports = {
@@ -107,64 +123,28 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
-}
-lspconfig.gopls.setup {}
-lspconfig.terraformls.setup {
+})
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.config('terraformls', {
   cmd = { 'terraform-ls', 'serve' },
-}
+})
+vim.lsp.enable('terraform-ls')
 
-vim.lsp.enable('basedpyright')
-vim.lsp.enable('ruff')
-
-lspconfig.astro.setup {
+vim.lsp.config('astro', {
   init_options = {
     typescript = {
       tsdk = './node_modules/typescript/lib',
     },
   },
-}
-lspconfig.clangd.setup {}
+})
+vim.lsp.enable('astro')
 
--- require("lspconfig").jsonls.setup({
---   settings = {
---     json = {
---       schemas = require("schemastore").json.schemas(),
---       validate = { enable = true },
---     },
---   },
--- })
-
-lspconfig.tailwindcss.setup {
+vim.lsp.config('tailwindcss', {
   settings = {
     tailwindcss = {
       filetypes_exclude = { 'markdown' },
     },
   },
-}
-
--- lspconfig.yamlls.setup({
---   settings = {
---     yaml = {
---       keyOrdering = false,
---     },
---     schemaStore = {
---       enable = false,
---       url = "",
---     },
---     schemas = require("schemastore").yaml.schemas(),
---   },
--- })
-
--- lspconfig.marksman.setup({})
-
--- lspconfig.eslint.setup({
---   on_attach = function(_, bufnr)
---     vim.api.nvim_create_autocmd("BufWritePre", {
---       buffer = bufnr,
---       command = "EslintFixAll",
---     })
---   end,
--- })
-
--- go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
--- lspconfig.buf_ls.setup({})
+})
+vim.lsp.enable('tailwindcss')
