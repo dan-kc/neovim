@@ -41,6 +41,9 @@ let
     nvim-treesitter-textobjects
     nvim-ts-context-commentstring
 
+    telescope-nvim
+    telescope-fzy-native-nvim
+
     vim-unimpaired
     nvim-surround
     nvim-unception
@@ -67,7 +70,6 @@ let
     yazi-nvim
     resession-nvim
     grug-far-nvim
-    fzf-lua
     stay-centered-nvim
   ];
 
