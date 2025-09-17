@@ -41,7 +41,7 @@ require('conform').setup {
   },
 }
 
-opts = {
+local opts = {
   async = true,
   lsp_fallback = false,
 }
