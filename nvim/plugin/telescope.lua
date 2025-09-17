@@ -69,12 +69,23 @@ local function fuzzy_grep_current_file_type()
   grep_current_file_type(fuzzy_grep)
 end
 
+vim.keymap.set('n', '<leader>/', function()
+  require('telescope.builtin').oldfiles {
+    cwd_only = true,
+    tiebreak = function(current_entry, existing_entry, _)
+      -- This ensures that when you are filtering, it's also sorted by last opened time.
+      -- https://github.com/nvim-telescope/telescope.nvim/issues/2539#issuecomment-1562510095
+      return current_entry.index < existing_entry.index
+    end,
+  }
+end, { desc = 'Find recent files in CWD' })
+
 vim.keymap.set('n', '<leader>f', function()
   builtin.find_files { hidden = true }
 end, { desc = '[t]elescope find files - ctrl[p] style' })
-vim.keymap.set('n', '<leader>/', function()
-  builtin.oldfiles { cwd = vim.loop.cwd() }
-end, { desc = '[telescope] old files' })
+-- vim.keymap.set('n', '<leader>/', function()
+--   builtin.oldfiles { cwd = vim.loop.cwd() }
+-- end, { desc = '[telescope] old files' })
 vim.keymap.set('n', '<leader>sg', function()
   require('telescope.builtin').live_grep {
     glob_pattern = { '!.git/', '!node_modules/' },
