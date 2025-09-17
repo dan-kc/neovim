@@ -6,19 +6,6 @@ vim.g.did_load_lspconfig_plugin = true
 local icons = require('user.icons')
 local lspconfig = require('lspconfig')
 
--- Function to handle server start and log messages
-local function on_init_handler(client)
-  if not client.handlers then
-    -- Server didn't start properly (e.g., executable not found)
-    vim.notify(
-      string.format("LSP: '%s' server did not start. Check if it's installed.", client.name),
-      vim.log.levels.INFO
-    )
-    return false -- Prevent lspconfig from attaching a client that didn't start
-  end
-  return true -- Allow lspconfig to attach
-end
-
 -- Defaults are not working for some reason.
 lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
   diagnostics = {
@@ -107,6 +94,11 @@ vim.lsp.enable('ts_ls')
 vim.lsp.config('rust_analyzer', {
   settings = {
     ['rust-analyzer'] = {
+      lspMux = {
+        version = '1',
+        method = 'connect',
+        server = 'rust-analyzer',
+      },
       imports = {
         granularity = {
           group = 'module',
