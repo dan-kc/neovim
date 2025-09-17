@@ -92,6 +92,7 @@ vim.lsp.config('ts_ls', {
 vim.lsp.enable('ts_ls')
 
 vim.lsp.config('rust_analyzer', {
+  cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
   settings = {
     ['rust-analyzer'] = {
       lspMux = {
