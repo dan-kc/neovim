@@ -14,7 +14,7 @@ require('conform').setup {
     hcl = { 'tfmt' },
     python = { 'ruff_organize_imports', 'ruff_fix', 'ruff_format' },
     c = { 'clang_format' },
-    html = { 'djlint' },
+    html = { 'prettier' },
     typescript = { 'prettier' },
     javascript = { 'prettier' },
     typescriptreact = { 'prettier' },
