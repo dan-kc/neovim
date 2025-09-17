@@ -91,33 +91,37 @@ vim.lsp.config('ts_ls', {
 })
 vim.lsp.enable('ts_ls')
 
-vim.lsp.config('rust_analyzer', {
-  cmd = vim.lsp.rpc.connect('127.0.0.1', 27631),
-  settings = {
-    ['rust-analyzer'] = {
-      lspMux = {
-        version = '1',
-        method = 'connect',
-        server = 'rust-analyzer',
-      },
-      imports = {
-        granularity = {
-          group = 'module',
+local ra_multiplex_port = os.getenv('RA_MULTIPLEX_PORT')
+
+if ra_multiplex_port ~= nil then
+  vim.lsp.config('rust_analyzer', {
+    cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(ra_multiplex_port)),
+    settings = {
+      ['rust-analyzer'] = {
+        lspMux = {
+          version = '1',
+          method = 'connect',
+          server = 'rust-analyzer',
         },
-        prefix = 'self',
-      },
-      cargo = {
-        buildScripts = {
+        imports = {
+          granularity = {
+            group = 'module',
+          },
+          prefix = 'self',
+        },
+        cargo = {
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
           enable = true,
         },
       },
-      procMacro = {
-        enable = true,
-      },
     },
-  },
-})
-vim.lsp.enable('rust_analyzer')
+  })
+  vim.lsp.enable('rust_analyzer')
+end
 
 vim.lsp.config('terraformls', {
   cmd = { 'terraform-ls', 'serve' },
