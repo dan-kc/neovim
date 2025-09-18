@@ -75,5 +75,6 @@ require('lze').load {
   require('configs.telescope'),
   require('configs.surround'),
   { 'treesj' },
+  require('configs.gitsigns'),
   require('configs.whichkey'),
 }

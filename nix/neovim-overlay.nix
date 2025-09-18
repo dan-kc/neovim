@@ -50,8 +50,11 @@ let
     sqlite-lua
     telescope-fzy-native-nvim # TODO: Find a way to lazy load this?
 
-    gitsigns-nvim
     lualine-nvim
+    {
+      plugin = gitsigns-nvim;
+      optional = true;
+    }
     {
       plugin = nvim-unception;
       optional = true;
