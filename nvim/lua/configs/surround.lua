@@ -1,9 +1,9 @@
-if vim.g.did_load_plugins_plugin then
-  return
-end
-vim.g.did_load_plugins_plugin = true
-
-require('nvim-surround').setup()
+return {
+  'nvim-surround',
+  after = function()
+    require('nvim-surround').setup()
+  end,
+}
 
 -- keymaps = {
 --       normal = "ys",

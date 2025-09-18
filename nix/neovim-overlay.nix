@@ -22,11 +22,20 @@ let
   #   ...
   # }
   all-plugins = with pkgs.vimPlugins; [
+    # Important
+    lze
+    nvim-lspconfig
+    base16-nvim
+
     nvim-treesitter.withAllGrammars
+    nvim-treesitter-textobjects
+    nvim-ts-context-commentstring
+
+    # TODO: Replace with Blink
     luasnip
     nvim-cmp
-    cmp_luasnip
     lspkind-nvim
+    cmp_luasnip
     cmp-nvim-lsp
     cmp-nvim-lsp-signature-help
     cmp-buffer
@@ -35,42 +44,59 @@ let
     cmp-cmdline
     cmp-cmdline-history
 
+    # Needed for telescope
+    nvim-web-devicons
+    plenary-nvim
+    sqlite-lua
+    telescope-fzy-native-nvim # TODO: Find a way to lazy load this?
+
     gitsigns-nvim
     lualine-nvim
-    nvim-navic
-    nvim-treesitter-textobjects
-    nvim-ts-context-commentstring
+    {
+      plugin = nvim-unception;
+      optional = true;
+    }
+    {
+      plugin = vim-repeat;
+      optional = true;
+    }
 
-    telescope-nvim
-    telescope-fzy-native-nvim
-
-    vim-unimpaired
-    nvim-surround
-    nvim-unception
-
-    # Packages that are needed for other plugins
-    statuscol-nvim
-    sqlite-lua
-    plenary-nvim
-    nvim-web-devicons
-    vim-repeat
-    which-key-nvim
-
-    # Stuff I added
-    conform-nvim
-    flash-nvim
-    nvim-lspconfig
-    treesj
-    mini-base16
-    base16-nvim
-    transparent-nvim
-    indent-blankline-nvim
-    mini-indentscope
-    dressing-nvim
-    yazi-nvim
-    resession-nvim
-    grug-far-nvim
-    stay-centered-nvim
+    {
+      plugin = nvim-surround;
+      optional = true;
+    }
+    {
+      plugin = which-key-nvim;
+      optional = true;
+    }
+    {
+      plugin = telescope-nvim;
+      optional = true;
+    }
+    {
+      plugin = yazi-nvim;
+      optional = true;
+    }
+    {
+      plugin = stay-centered-nvim;
+      optional = true;
+    }
+    {
+      plugin = conform-nvim;
+      optional = true;
+    }
+    {
+      plugin = flash-nvim;
+      optional = true;
+    }
+    {
+      plugin = treesj;
+      optional = true;
+    }
+    {
+      plugin = mini-indentscope;
+      optional = true;
+    }
   ];
 
   extraLuaPackages = p: [

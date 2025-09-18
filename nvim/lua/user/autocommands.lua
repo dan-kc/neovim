@@ -1,10 +1,6 @@
-if vim.g.did_load_autocommands_plugin then
-  return
-end
-vim.g.did_load_autocommands_plugin = true
-
 local api = vim.api
 
+-- Dont make an undo file if you're editing /tmp/*
 api.nvim_create_autocmd('BufWritePre', {
   pattern = '/tmp/*',
   callback = function()
@@ -57,20 +53,27 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
 -- go to last location when opening a buffer
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function(event)
-    local exclude = { 'gitcommit' }
-    local buf = event.buf
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].lazyvim_last_loc then
+    local exclude_filetypes = { 'gitcommit', 'gitrebase', 'help', 'fugitive' }
+
+    -- If the buffer's filetype is in our exclude list, do nothing
+    if vim.tbl_contains(exclude_filetypes, vim.bo[event.buf].filetype) then
       return
     end
-    vim.b[buf].lazyvim_last_loc = true
-    local mark = vim.api.nvim_buf_get_mark(buf, '"')
-    local lcount = vim.api.nvim_buf_line_count(buf)
-    if mark[1] > 0 and mark[1] <= lcount then
+
+    -- Get the last cursor position for the current buffer (from the '"' mark)
+    local mark = vim.api.nvim_buf_get_mark(event.buf, '"')
+    local line_count = vim.api.nvim_buf_line_count(event.buf)
+
+    -- Check if the mark is valid (not 0, not beyond buffer end)
+    -- and if we are not at the very beginning of the file (1,0) to avoid jumping unnecessarily
+    if mark[1] > 1 and mark[1] <= line_count then
+      -- Attempt to set the cursor. pcall prevents errors if window is invalid.
       pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      -- Center the cursor in the window
+      vim.cmd('normal! zz')
     end
-    vim.cmd('normal! zz')
   end,
-  desc = 'go to last location when opening a buffer, then center cursor',
+  desc = 'Go to last location in file after opening',
 })
 
 -- LSP stuff
@@ -153,24 +156,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local resession = require('resession')
--- Create one session per directory with recession
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    -- Only load the session if nvim was started with no args and without reading from stdin
-    if vim.fn.argc(-1) == 0 and not vim.g.using_stdin then
-      -- Save these to a different directory, so our manual sessions don't get polluted
-      resession.load(vim.fn.getcwd(), { dir = 'dirsession', silence_errors = true })
-    end
-    vim.cmd('normal! zz')
-  end,
-  nested = true,
-})
-vim.api.nvim_create_autocmd('VimLeavePre', {
-  callback = function()
-    resession.save(vim.fn.getcwd(), { dir = 'dirsession', notify = false })
-  end,
-})
 vim.api.nvim_create_autocmd('StdinReadPre', {
   callback = function()
     -- Store this for later

@@ -13,22 +13,8 @@ local function show_macro_recording()
   end
 end
 
-local auto = require('lualine.themes.auto')
-auto.normal.c.bg = '#00000000'
-auto.insert.c.bg = '#00000000'
-auto.visual.c.bg = '#00000000'
-auto.replace.c.bg = '#00000000'
-auto.command.c.bg = '#00000000'
-
-auto.normal.b.bg = '#00000000'
-auto.insert.b.bg = '#00000000'
-auto.visual.b.bg = '#00000000'
-auto.replace.b.bg = '#00000000'
-auto.command.b.bg = '#00000000'
-
 require('lualine').setup {
   options = {
-    theme = auto,
     component_separators = '',
     section_separators = '',
   },
@@ -53,5 +39,4 @@ require('lualine').setup {
     lualine_y = { { 'filename', path = 0 } },
     lualine_z = { { 'branch', icon = icons.git.symbol } },
   },
-  extensions = { 'fugitive', 'fzf', 'toggleterm', 'quickfix' },
 }

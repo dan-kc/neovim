@@ -63,19 +63,16 @@ cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 -- let sqlite.lua (which some plugins depend on) know where to find sqlite
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 
+require('user.autocommands')
+
 require('lze').load {
-  {
-    'yazi',
-    keys = {
-      -- Create a key mapping and lazy-load when it is used
-      { '<leader>e', '<CMD>Yazi<CR>', desc = 'Open Yazi' },
-      -- vim.keymap.set('n', '<leader>e', '<cmd>Yazi<cr>', { desc = 'Open Yazi' })
-      -- vim.keymap.set('n', '<leader>E', '<cmd>Yazi cwd<cr>', { desc = 'Open Yazi CWD' })
-    },
-    after = function()
-      require('yazi').setup {
-        open_for_directories = false,
-      }
-    end,
-  },
+  require('configs.yazi'),
+  require('configs.flash'),
+  require('configs.stay-centered'),
+  require('configs.conform'),
+  require('configs.indentscope'),
+  require('configs.telescope'),
+  require('configs.surround'),
+  { 'treesj' },
+  require('configs.whichkey'),
 }
