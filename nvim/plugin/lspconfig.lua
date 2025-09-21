@@ -49,7 +49,8 @@ end
 
 vim.lsp.enable('nil_ls')
 vim.lsp.enable('gopls')
-vim.lsp.enable('basedpyright')
+vim.lsp.enable('pyright')
+-- vim.lsp.enable('basedpyright')
 vim.lsp.enable('elixirls')
 vim.lsp.enable('shopify_theme_ls')
 
