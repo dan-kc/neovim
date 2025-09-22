@@ -49,13 +49,12 @@ end
 
 vim.lsp.enable('nil_ls')
 vim.lsp.enable('gopls')
-vim.lsp.config('pyright', {
+vim.lsp.config('basedpyright', {
   root_markers = {
     'pyrightconfig.json',
   },
 })
-vim.lsp.enable('pyright')
--- vim.lsp.enable('basedpyright')
+vim.lsp.enable('basedpyright')
 vim.lsp.enable('elixirls')
 vim.lsp.enable('shopify_theme_ls')
 
