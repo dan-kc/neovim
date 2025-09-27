@@ -130,6 +130,9 @@ end
 
 vim.lsp.config('terraform-ls', {
   cmd = { 'terraform-ls', 'serve' },
+  root_markers = {
+    '.terraform',
+  },
 })
 vim.lsp.enable('terraform-ls')
 
