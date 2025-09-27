@@ -128,7 +128,7 @@ if ra_multiplex_port ~= nil then
   vim.lsp.enable('rust_analyzer')
 end
 
-vim.lsp.config('terraformls', {
+vim.lsp.config('terraform-ls', {
   cmd = { 'terraform-ls', 'serve' },
 })
 vim.lsp.enable('terraform-ls')
