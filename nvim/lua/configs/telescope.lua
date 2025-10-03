@@ -54,7 +54,7 @@ return {
           return math.floor(max_lines * 0.99)
         end,
         prompt_position = 'bottom',
-        preview_cutoff = 0,
+        preview_cutoff = 99999,
       },
     }
 
