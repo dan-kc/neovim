@@ -33,6 +33,11 @@ return {
       desc = '[telescope] live grep',
     },
     {
+      "<leader>'",
+      require('telescope.builtin').resume,
+      desc = '[telescope] resume',
+    },
+    {
       '<leader>sr',
       require('telescope.builtin').registers,
       desc = '[telescope] search registers',
