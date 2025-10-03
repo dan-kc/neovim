@@ -5,7 +5,7 @@ return {
       keymap = {
         ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
         ['<C-e>'] = { 'hide', 'fallback' },
-        ['<C-y>'] = { 'select_and_accept', 'fallback' },
+        ['<C-CR>'] = { 'select_and_accept', 'fallback' },
 
         ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
         ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
@@ -31,7 +31,7 @@ return {
             },
           },
         },
-        ghost_text = { enabled = true },
+        ghost_text = { enabled = false },
       },
       sources = {
         default = { 'lsp', 'path', 'buffer' },
