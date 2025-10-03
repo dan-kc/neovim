@@ -68,6 +68,10 @@ let
       optional = true;
     }
     {
+      plugin = blink-cmp;
+      optional = true;
+    }
+    {
       plugin = nvim-surround;
       optional = true;
     }
