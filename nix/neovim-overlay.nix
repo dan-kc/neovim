@@ -63,7 +63,10 @@ let
       plugin = vim-repeat;
       optional = true;
     }
-
+    {
+      plugin = mini-pairs;
+      optional = true;
+    }
     {
       plugin = nvim-surround;
       optional = true;

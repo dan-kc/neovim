@@ -65,6 +65,7 @@ cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 
 require('user.autocommands')
+require('user.keymaps')
 
 require('lze').load {
   require('configs.yazi'),
@@ -72,6 +73,7 @@ require('lze').load {
   require('configs.stay-centered'),
   require('configs.conform'),
   require('configs.indentscope'),
+  require('configs.pairs'),
   require('configs.telescope'),
   require('configs.surround'),
   { 'treesj' },

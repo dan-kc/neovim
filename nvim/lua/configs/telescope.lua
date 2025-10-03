@@ -32,11 +32,19 @@ return {
       end,
       desc = '[telescope] live grep',
     },
+    {
+      '<leader>sr',
+      require('telescope.builtin').registers,
+      desc = '[telescope] search registers',
+    },
+    {
+      '<leader>sq',
+      require('telescope.builtin').quickfix,
+      desc = '[telescope] live locations',
+    },
   },
   after = function()
     local telescope = require('telescope')
-    local actions = require('telescope.actions')
-
     local layout_config = {
       vertical = {
         width = function(_, max_columns)
@@ -57,15 +65,6 @@ return {
         },
         layout_strategy = 'vertical',
         layout_config = layout_config,
-        mappings = {
-          i = {
-            -- ['<C-l>'] = actions.send_to_qflist,
-          },
-          n = {
-            q = actions.close,
-            -- ['<C-l>'] = actions.send_to_qflist,
-          },
-        },
         preview = {
           treesitter = true,
         },
