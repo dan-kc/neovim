@@ -47,6 +47,7 @@ opt.splitright = true
 opt.splitbelow = true
 opt.wrap = false
 opt.signcolumn = 'yes' -- Always show sign column to prevent layout shift
+opt.spell = false
 
 opt.jumpoptions = 'stack'
 
