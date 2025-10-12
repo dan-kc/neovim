@@ -28,8 +28,8 @@ vim.keymap.set({ 'i' }, '<C-L>', function()
     end
   end
 
-  if #stack > 1 then
-    -- Multiple unclosed brackets - close them all
+  if #stack >= 1 then
+    -- Close all unclosed brackets
     local indent = before_cursor:match('^%s*') or ''
     local lines = {}
     table.insert(lines, indent .. string.rep(' ', vim.o.shiftwidth))
@@ -43,13 +43,9 @@ vim.keymap.set({ 'i' }, '<C-L>', function()
 
     -- Insert the lines
     local current_line = vim.fn.line('.')
-    local current_col = vim.fn.col('.')
     vim.api.nvim_put(lines, 'l', true, true)
     -- Move cursor to the first inserted line at the proper indentation
     vim.api.nvim_win_set_cursor(0, { current_line + 1, #indent + vim.o.shiftwidth })
-  elseif #stack == 1 and ls.expandable() then
-    -- Single bracket with expandable snippet - use snippet
-    ls.expand()
   end
 end, { silent = true })
 
@@ -71,18 +67,16 @@ for open, close in pairs(closing_brackets) do
       trig = open,
       wordTrig = false,
     }, {
-      t({ open, '' }),
-      f(function()
-        local indent = vim.fn.indent(vim.fn.line('.') - 1)
-        return string.rep(' ', indent + vim.o.shiftwidth)
+      f(function(_, snip)
+        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
+        return { open, indent .. string.rep(' ', vim.o.shiftwidth) }
       end),
       i(1),
-      t({ '', '' }),
-      f(function()
-        local indent = vim.fn.indent(vim.fn.line('.') - 2)
-        return string.rep(' ', indent)
+      f(function(_, snip)
+        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
+
+        return { '', indent .. close }
       end),
-      t(close),
     })
   )
 end
