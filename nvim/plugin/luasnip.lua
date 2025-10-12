@@ -71,16 +71,16 @@ for open, close in pairs(closing_brackets) do
       trig = open,
       wordTrig = false,
     }, {
-      t { open, '' },
-      f(function(_, snip)
-        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
-        return indent .. string.rep(' ', vim.o.shiftwidth)
+      t({ open, '' }),
+      f(function()
+        local indent = vim.fn.indent(vim.fn.line('.') - 1)
+        return string.rep(' ', indent + vim.o.shiftwidth)
       end),
       i(1),
-      t { '', '' },
-      f(function(_, snip)
-        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
-        return indent
+      t({ '', '' }),
+      f(function()
+        local indent = vim.fn.indent(vim.fn.line('.') - 2)
+        return string.rep(' ', indent)
       end),
       t(close),
     })
