@@ -42,9 +42,11 @@ vim.keymap.set({ 'i' }, '<C-L>', function()
     table.insert(lines, indent .. closing)
 
     -- Insert the lines
+    local current_line = vim.fn.line('.')
+    local current_col = vim.fn.col('.')
     vim.api.nvim_put(lines, 'l', true, true)
-    -- Move cursor to the indented line
-    vim.api.nvim_win_set_cursor(0, { vim.fn.line('.') - 1, #indent + vim.o.shiftwidth + 1 })
+    -- Move cursor to the first inserted line at the proper indentation
+    vim.api.nvim_win_set_cursor(0, { current_line + 1, #indent + vim.o.shiftwidth })
   elseif #stack == 1 and ls.expandable() then
     -- Single bracket with expandable snippet - use snippet
     ls.expand()
