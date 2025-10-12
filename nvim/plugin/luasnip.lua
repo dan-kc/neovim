@@ -34,15 +34,17 @@ vim.keymap.set({ 'i' }, '<C-L>', function()
     local lines = {}
     table.insert(lines, indent .. string.rep(' ', vim.o.shiftwidth))
 
-    -- Close brackets in reverse order
+    -- Close brackets in reverse order all on one line
+    local closing = ''
     for i = #stack, 1, -1 do
-      table.insert(lines, indent .. bracket_map[stack[i]])
+      closing = closing .. bracket_map[stack[i]]
     end
+    table.insert(lines, indent .. closing)
 
     -- Insert the lines
     vim.api.nvim_put(lines, 'l', true, true)
     -- Move cursor to the indented line
-    vim.api.nvim_win_set_cursor(0, { vim.fn.line('.') - #stack, #indent + vim.o.shiftwidth + 1 })
+    vim.api.nvim_win_set_cursor(0, { vim.fn.line('.') - 1, #indent + vim.o.shiftwidth + 1 })
   elseif #stack == 1 and ls.expandable() then
     -- Single bracket with expandable snippet - use snippet
     ls.expand()
