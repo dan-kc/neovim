@@ -27,15 +27,20 @@ local bracket_snippets = {}
 for open, close in pairs(closing_brackets) do
   table.insert(
     bracket_snippets,
-    s(open, {
-      t({ open .. ' ', '' }),
-      f(function()
-        return string.rep(' ', get_indent() + vim.o.shiftwidth)
+    s({
+      trig = open,
+      wordTrig = false,
+    }, {
+      t { open, '' },
+      f(function(_, snip)
+        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
+        return indent .. string.rep(' ', vim.o.shiftwidth)
       end),
       i(1),
-      t({ '', '' }),
-      f(function()
-        return string.rep(' ', get_indent())
+      t { '', '' },
+      f(function(_, snip)
+        local indent = string.match(snip.env.TM_CURRENT_LINE, '^%s*') or ''
+        return indent
       end),
       t(close),
     })
