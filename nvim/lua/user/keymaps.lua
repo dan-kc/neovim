@@ -94,7 +94,22 @@ keymap.set('n', '<S-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase w
 
 keymap.set('n', '<leader>wx', '<C-w>x', { desc = 'Swap window with next' })
 keymap.set('n', '<leader>ux', ':set cursorline!<CR>', { desc = 'Toggle cursor line' })
-keymap.set('n', '<leader>ul', ':set number!<CR>', { desc = 'Toggle line number' })
+local function toggle_line_numbers()
+  if not vim.opt.number:get() and not vim.opt.relativenumber:get() then
+    -- Currently no line numbers, switch to relative and absolute
+    vim.opt.relativenumber = true
+    vim.opt.number = true
+  elseif vim.opt.relativenumber:get() then
+    -- Currently relative line numbers, switch to absolute
+    vim.opt.relativenumber = false
+    vim.opt.number = true
+  else
+    -- Currently absolute line numbers, switch to no line numbers
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end
+end
+keymap.set('n', '<leader>ul', toggle_line_numbers, { desc = 'Toggle line number style' })
 
 -- Keep highlighted when indenting
 keymap.set('v', '<', '<gv')
@@ -158,3 +173,7 @@ keymap.set('n', '<leader>yp', ":let @+=expand('%')<CR>", { desc = 'Yank relative
 
 -- Yank absolute path:
 -- keymap.set('n', '<leader>yp', ":let @+=expand('%:p')<CR>", { desc = 'Yank path' })
+
+keymap.set('n', '<leader>uw', function()
+  vim.opt.wrap = not vim.opt.wrap:get()
+end, { desc = 'Toggle word wrap' })
