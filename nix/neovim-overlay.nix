@@ -114,6 +114,8 @@ let
   ];
 
   extraPackages = with pkgs; [
+    ripgrep
+
     # lua-language-server
     stylua
 
