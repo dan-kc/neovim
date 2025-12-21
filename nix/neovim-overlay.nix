@@ -115,6 +115,7 @@ let
 
   extraPackages = with pkgs; [
     ripgrep
+    yazi
 
     # lua-language-server
     stylua
