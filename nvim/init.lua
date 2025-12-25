@@ -47,7 +47,7 @@ opt.history = 2000
 opt.undofile = true
 opt.splitright = true
 opt.splitbelow = true
-opt.wrap = true
+opt.wrap = false
 opt.signcolumn = 'yes' -- Always show sign column to prevent layout shift
 opt.spell = false
 
