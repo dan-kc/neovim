@@ -133,6 +133,9 @@ vim.lsp.config('terraform-ls', {
   root_markers = {
     '.terraform.lock.hcl',
   },
+  init_options = {
+    ignoreSingleFileWarning = true,
+  },
 })
 vim.lsp.enable('terraform-ls')
 
