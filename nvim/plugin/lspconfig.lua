@@ -96,7 +96,7 @@ vim.lsp.config('ts_ls', {
 })
 vim.lsp.enable('ts_ls')
 
-local ra_multiplex_port = os.getenv('RA_MULTIPLEX_PORT')
+local ra_multiplex_port = os.getenv('LSPMUX_PORT')
 
 if ra_multiplex_port ~= nil then
   vim.lsp.config('rust_analyzer', {
