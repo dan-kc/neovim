@@ -128,13 +128,13 @@ if ra_multiplex_port ~= nil then
   vim.lsp.enable('rust_analyzer')
 end
 
--- vim.lsp.config('terraform-ls', {
---   cmd = { 'terraform-ls', 'serve' },
---   root_markers = {
---     '.terraform.lock.hcl',
---   },
--- })
--- vim.lsp.enable('terraform-ls')
+vim.lsp.config('terraform-ls', {
+  cmd = { 'terraform-ls', 'serve' },
+  root_markers = {
+    '.terraform.lock.hcl',
+  },
+})
+vim.lsp.enable('terraform-ls')
 
 vim.lsp.config('astro', {
   init_options = {
