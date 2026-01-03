@@ -1,5 +1,6 @@
 return {
   'blink.cmp',
+  -- dependencies = { 'fang2hou/blink-copilot' },
   after = function()
     require('blink.cmp').setup {
       keymap = {
@@ -34,7 +35,15 @@ return {
         ghost_text = { enabled = false },
       },
       sources = {
-        default = { 'lsp', 'path', 'buffer' },
+        default = { 'copilot', 'lsp', 'path', 'buffer' },
+        providers = {
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+        },
       },
       fuzzy = { implementation = 'rust' },
     }

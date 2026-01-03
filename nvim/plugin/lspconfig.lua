@@ -156,3 +156,5 @@ vim.lsp.config('tailwindcss', {
   },
 })
 vim.lsp.enable('tailwindcss')
+
+vim.lsp.enable('copilot')
