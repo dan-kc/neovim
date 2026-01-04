@@ -2,6 +2,14 @@ return {
   'telescope.nvim',
   keys = {
     {
+      '<leader>p',
+      function()
+        require('telescope').extensions.yank_history.yank_history()
+      end,
+      mode = { 'n', 'x' },
+      desc = 'Open Yank History',
+    },
+    {
       '<leader>/',
       function()
         require('telescope.builtin').oldfiles {
@@ -102,5 +110,6 @@ return {
       },
     }
     telescope.load_extension('fzy_native')
+    telescope.load_extension('yank_history')
   end,
 }
