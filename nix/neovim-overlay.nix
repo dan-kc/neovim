@@ -22,10 +22,10 @@ let
   #   ...
   # }
   all-plugins = with pkgs.vimPlugins; [
-    # Important
     lze
     nvim-lspconfig
     base16-nvim
+    
 
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
@@ -65,6 +65,10 @@ let
     }
     {
       plugin = mini-pairs;
+      optional = true;
+    }
+    {
+      plugin = yanky-nvim;
       optional = true;
     }
     {

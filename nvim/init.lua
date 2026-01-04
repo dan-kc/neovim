@@ -82,5 +82,6 @@ require('lze').load {
   require('configs.treesj'),
   require('configs.gitsigns'),
   require('configs.whichkey'),
+  require('configs.yanky'),
   require('configs.blink'),
 }
