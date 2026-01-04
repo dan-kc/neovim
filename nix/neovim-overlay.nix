@@ -51,7 +51,6 @@ let
     telescope-fzy-native-nvim # TODO: Find a way to lazy load this?
 
     lualine-nvim
-    blink-copilot
     {
       plugin = gitsigns-nvim;
       optional = true;
@@ -139,8 +138,6 @@ let
     black
 
     # clang-tools
-
-    copilot-language-server
   ];
 in
 {

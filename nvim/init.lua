@@ -70,7 +70,7 @@ vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 require('user.autocommands')
 require('user.keymaps')
 
-require('lze').load { -- Loads in order
+require('lze').load {
   require('configs.yazi'),
   require('configs.flash'),
   -- require('configs.stay-centered'),
@@ -82,6 +82,5 @@ require('lze').load { -- Loads in order
   require('configs.treesj'),
   require('configs.gitsigns'),
   require('configs.whichkey'),
-  { 'blink-copilot' },
   require('configs.blink'),
 }

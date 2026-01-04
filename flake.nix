@@ -32,11 +32,6 @@
       let
         pkgs = import nixpkgs {
           inherit system;
-          config = {
-            allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-              "copilot-language-server"
-            ];
-          };
           overlays = [
             neovim-overlay
             inputs.gen-luarc.overlays.default
