@@ -24,11 +24,11 @@ return {
       desc = 'Find recent files in CWD',
     },
     {
-      '<leader>f',
+      '<leader>ff',
       function()
         require('telescope.builtin').find_files { hidden = true }
       end,
-      desc = '[t]elescope find files - ctrl[p] style',
+      desc = '[t]elescope find files',
     },
     {
       '<leader>sg',
@@ -54,6 +54,15 @@ return {
       '<leader>sq',
       require('telescope.builtin').quickfix,
       desc = '[telescope] live locations',
+    },
+    {
+      '<leader>fg',
+      function()
+        require('telescope.builtin').git_status({
+          layout_config = { preview_cutoff = 0 },
+        })
+      end,
+      desc = '[F]ind [G]it changes',
     },
   },
   after = function()
