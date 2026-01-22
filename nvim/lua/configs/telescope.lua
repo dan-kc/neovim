@@ -31,6 +31,13 @@ return {
       desc = '[t]elescope find files',
     },
     {
+      '<leader>fF',
+      function()
+        require('telescope.builtin').find_files { hidden = true, no_ignore = true }
+      end,
+      desc = '[telescope] find all files (including gitignored)',
+    },
+    {
       '<leader>sg',
       function()
         require('telescope.builtin').live_grep {
@@ -39,6 +46,16 @@ return {
         }
       end,
       desc = '[telescope] live grep',
+    },
+    {
+      '<leader>sG',
+      function()
+        require('telescope.builtin').live_grep {
+          glob_pattern = { '!.git/', '!.direnv/' },
+          additional_args = { '--hidden', '--no-ignore' },
+        }
+      end,
+      desc = '[telescope] live grep all files (including gitignored)',
     },
     {
       "<leader>'",
@@ -58,9 +75,9 @@ return {
     {
       '<leader>fg',
       function()
-        require('telescope.builtin').git_status({
+        require('telescope.builtin').git_status {
           layout_config = { preview_cutoff = 0 },
-        })
+        }
       end,
       desc = '[F]ind [G]it changes',
     },
