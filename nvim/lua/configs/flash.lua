@@ -83,6 +83,12 @@ return {
       label = {
         uppercase = false,
       },
+      search = {
+        mode = function(str)
+          -- Include empty lines (^$) in search results along with typed pattern
+          return str .. '\\|^$'
+        end,
+      },
     }
   end,
 }
