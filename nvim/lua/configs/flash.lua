@@ -85,8 +85,10 @@ return {
       },
       search = {
         mode = function(str)
-          -- Include empty lines (^$) in search results along with typed pattern
-          return str .. '\\|^$'
+          if str:match(' ') then
+            return str .. '\\|^$'
+          end
+          return str
         end,
       },
     }
