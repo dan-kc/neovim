@@ -170,6 +170,14 @@ keymap.set('n', '<C-f>', '<C-f>zz', { desc = 'move DOWN [f]ull-page and center' 
 keymap.set('n', '<C-b>', '<C-b>zz', { desc = 'move UP full-page and center' })
 
 keymap.set('n', '<leader>yp', ":let @+=expand('%')<CR>", { desc = 'Yank relative path' })
+keymap.set('v', '<leader>yp', function()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local filename = vim.fn.expand('%')
+  local ref = '@' .. filename .. 'L' .. start_line .. '-' .. end_line
+  vim.fn.setreg('+', ref)
+  vim.notify('Copied: ' .. ref)
+end, { desc = 'Yank Claude Code reference' })
 
 -- Yank absolute path:
 -- keymap.set('n', '<leader>yp', ":let @+=expand('%:p')<CR>", { desc = 'Yank path' })
