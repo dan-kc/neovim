@@ -138,10 +138,10 @@ vim.lsp.config('terraform-ls', {
   },
 })
 vim.lsp.enable('terraform-ls')
-vim.lsp.enable('kotlin_language_server')
-vim.lsp.config('kotlin_language_server', {
-  root_markers = { 'settings.gradle.kts', 'settings.gradle' },
-})
+-- vim.lsp.enable('kotlin_language_server')
+-- vim.lsp.config('kotlin_language_server', {
+--   root_markers = { 'settings.gradle.kts', 'settings.gradle' },
+-- })
 
 vim.lsp.config('astro', {
   init_options = {
