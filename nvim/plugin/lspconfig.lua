@@ -138,6 +138,7 @@ vim.lsp.config('terraform-ls', {
   },
 })
 vim.lsp.enable('terraform-ls')
+vim.lsp.enable('kotlin_language_server')
 
 vim.lsp.config('astro', {
   init_options = {

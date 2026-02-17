@@ -11,6 +11,13 @@ return {
       end,
       desc = 'Format buffer',
     },
+    {
+      '<leader>,',
+      function()
+        vim.lsp.buf.format { async = true }
+      end,
+      desc = 'Format buffer (LSP)',
+    },
   },
   after = function()
     require('conform').setup {
@@ -40,6 +47,7 @@ return {
         handlebars = { 'prettier' },
         liquid = { 'prettier' },
         toml = { 'taplo' },
+        kotlin = { 'ktlint' },
         astro = { 'prettier' },
       },
       formatters = {
