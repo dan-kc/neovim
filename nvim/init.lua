@@ -39,6 +39,10 @@ opt.scrolloff = 4
 opt.smartindent = true
 opt.conceallevel = 0
 
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+vim.opt.showbreak = '↳ '
+
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
