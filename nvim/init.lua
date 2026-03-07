@@ -37,7 +37,7 @@ opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.sidescrolloff = 3
 opt.scrolloff = 4
 opt.smartindent = true
-opt.conceallevel = 0
+opt.conceallevel = 2
 
 vim.opt.linebreak = true
 vim.opt.breakindent = true
