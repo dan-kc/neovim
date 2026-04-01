@@ -43,9 +43,8 @@
             lua-language-server
             stylua
             luajitPackages.luacheck
-
             nil
-            nixfmt-rfc-style
+            nixfmt
           ];
           shellHook = ''
             ln -fs ${pkgs.nvim-luarc-json} .luarc.json
