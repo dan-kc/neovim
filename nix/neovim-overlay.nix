@@ -128,7 +128,7 @@ let
     # rustfmt
 
     # typescript-language-server
-    nodePackages.prettier
+    prettier
 
     # gopls
     gofumpt
