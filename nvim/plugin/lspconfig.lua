@@ -97,7 +97,6 @@ vim.lsp.config('ts_ls', {
 vim.lsp.enable('ts_ls')
 
 local ra_multiplex_port = os.getenv('LSPMUX_PORT')
-
 if ra_multiplex_port ~= nil then
   vim.lsp.config('rust_analyzer', {
     cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(ra_multiplex_port)),
@@ -138,10 +137,6 @@ vim.lsp.config('terraform-ls', {
   },
 })
 vim.lsp.enable('terraform-ls')
--- vim.lsp.enable('kotlin_language_server')
--- vim.lsp.config('kotlin_language_server', {
---   root_markers = { 'settings.gradle.kts', 'settings.gradle' },
--- })
 
 vim.lsp.config('astro', {
   init_options = {
@@ -151,12 +146,3 @@ vim.lsp.config('astro', {
   },
 })
 vim.lsp.enable('astro')
-
-vim.lsp.config('tailwindcss', {
-  settings = {
-    tailwindcss = {
-      filetypes_exclude = { 'markdown' },
-    },
-  },
-})
-vim.lsp.enable('tailwindcss')
