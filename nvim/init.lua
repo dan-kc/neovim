@@ -73,6 +73,7 @@ vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
 
 require('user.autocommands')
 require('user.keymaps')
+require('user.clipboard').setup()
 
 require('lze').load {
   require('configs.yazi'),
