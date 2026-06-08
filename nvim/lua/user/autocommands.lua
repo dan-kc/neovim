@@ -92,23 +92,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', 'K', vim.lsp.buf.hover, desc('[lsp] hover'))
     keymap.set('n', '<space>r', vim.lsp.buf.rename, desc('lsp [r]ename'))
     keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, desc('[lsp] [c]ode [a]ction'))
-    keymap.set('n', '<leader>cl', vim.lsp.codelens.run, desc('[lsp] [c]ode [l]ens'))
 
-    -- Auto-refresh code lenses
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if not client then
       return
-    end
-    local group = api.nvim_create_augroup(string.format('lsp-%s-%s', bufnr, client.id), {})
-    if client.server_capabilities.codeLensProvider then
-      vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost', 'TextChanged' }, {
-        group = group,
-        callback = function()
-          vim.lsp.codelens.refresh { bufnr = bufnr }
-        end,
-        buffer = bufnr,
-      })
-      vim.lsp.codelens.refresh { bufnr = bufnr }
     end
 
     -- Remove syntax hilighting from the lsp

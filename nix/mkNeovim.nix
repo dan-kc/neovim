@@ -56,9 +56,8 @@ let
   # Map all plugins to an attrset { plugin = <plugin>; config = <config>; optional = <tf>; ... }
   normalizedPlugins = map (x: defaultPlugin // (if x ? plugin then x else { plugin = x; })) plugins;
 
-  # This nixpkgs util function creates an attrset
-  # that pkgs.wrapNeovimUnstable uses to configure the Neovim build.
-  neovimConfig = neovimUtils.makeNeovimConfig {
+  # Configuration passed directly to pkgs.wrapNeovimUnstable.
+  neovimConfig = {
     inherit
       extraPython3Packages
       withPython3
@@ -67,6 +66,8 @@ let
       viAlias
       vimAlias
       ;
+    neovimRcContent = "";
+    wrapperArgs = [ ];
     plugins = normalizedPlugins;
   };
 
