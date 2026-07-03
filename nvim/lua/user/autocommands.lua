@@ -17,11 +17,27 @@ api.nvim_create_autocmd('BufWritePre', {
 --   end,
 -- })
 
---- Don't create a comment string when hitting <Enter> on a comment line
-vim.api.nvim_create_autocmd('BufEnter', {
-  group = vim.api.nvim_create_augroup('DisableNewLineAutoCommentString', {}),
+local format_options_group = api.nvim_create_augroup('UserFormatOptions', {})
+local function configure_format_options()
+  vim.opt_local.formatoptions:remove { 't', 'c', 'o' }
+end
+
+-- Don't auto-wrap while typing or auto-continue comments from normal-mode o/O.
+vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType' }, {
+  group = format_options_group,
+  callback = configure_format_options,
+})
+
+-- Nix's ftplugin does not enable insert-mode comment continuation by default.
+-- Also disable smartindent so typing "#" does not jump to column 0.
+vim.api.nvim_create_autocmd('FileType', {
+  group = format_options_group,
+  pattern = 'nix',
   callback = function()
-    vim.opt.formatoptions = vim.opt.formatoptions - { 'c', 'r', 'o' }
+    configure_format_options()
+    vim.opt_local.formatoptions:append 'r'
+    vim.opt_local.smartindent = false
+    vim.opt_local.autoindent = true
   end,
 })
 
