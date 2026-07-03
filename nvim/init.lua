@@ -38,8 +38,8 @@ opt.sidescrolloff = 3
 opt.scrolloff = 4
 opt.smartindent = true
 opt.conceallevel = 2
-opt.colorcolumn = '80'
 opt.textwidth = 80
+opt.colorcolumn = '+0' -- Keep the guide aligned with buffer-local textwidth.
 
 vim.opt.linebreak = true
 vim.opt.breakindent = true

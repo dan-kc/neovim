@@ -41,6 +41,51 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+local filetype_settings_group = api.nvim_create_augroup('UserFiletypeSettings', {})
+
+local function get_rust_textwidth()
+  local bufname = vim.api.nvim_buf_get_name(0)
+  local search_path = bufname ~= '' and vim.fs.dirname(bufname) or vim.uv.cwd()
+  local rustfmt_config = vim.fs.find({ 'rustfmt.toml', '.rustfmt.toml' }, {
+    upward = true,
+    path = search_path,
+  })[1]
+
+  if not rustfmt_config then
+    return 100
+  end
+
+  for _, line in ipairs(vim.fn.readfile(rustfmt_config)) do
+    local max_width = line:match('^%s*max_width%s*=%s*(%d+)')
+    if max_width then
+      return tonumber(max_width)
+    end
+  end
+
+  return 100
+end
+
+local function configure_rust_textwidth()
+  if vim.bo.filetype ~= 'rust' then
+    return
+  end
+
+  vim.opt_local.textwidth = get_rust_textwidth()
+end
+
+-- Rust's ftplugin sets textwidth=100; prefer local rustfmt max_width when set.
+vim.api.nvim_create_autocmd('FileType', {
+  group = filetype_settings_group,
+  pattern = 'rust',
+  callback = configure_rust_textwidth,
+})
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = filetype_settings_group,
+  pattern = '*.rs',
+  callback = configure_rust_textwidth,
+})
+
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
