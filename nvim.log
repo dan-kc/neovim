@@ -1,0 +1,2 @@
+WRN 2026-07-16T09:32:38.619 ?.45754    server_start:197: Failed to start server: operation not permitted: /var/folders/m6/4cv8ht196hn34d3k81ssffs00000gn/T/nvim.danielcox/CNIJbW/nvim.45754.0
+WRN 2026-07-16T09:32:43.745 ?.45968    server_start:197: Failed to start server: operation not permitted: /var/folders/m6/4cv8ht196hn34d3k81ssffs00000gn/T/nvim.danielcox/PuoNr0/nvim.45968.0

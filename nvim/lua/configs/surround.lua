@@ -10,6 +10,12 @@ return {
       desc = 'Add a surrounding pair around a motion',
     },
     {
+      'gs',
+      '<Plug>(nvim-surround-visual)',
+      mode = 'x',
+      desc = 'Add a surrounding pair around the visual selection',
+    },
+    {
       'gss',
       '<Plug>(nvim-surround-normal-cur)',
       desc = 'Add a surrounding pair around the current line',
