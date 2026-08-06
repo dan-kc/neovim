@@ -43,6 +43,12 @@ if vim.fn.filereadable(base16_yaml_file) == 1 then
       mini_completion = true,
       dapui = true,
     })
+
+    -- setup() does not emit ColorScheme like :colorscheme does.  Mark this as
+    -- a Base16 theme and notify plugins such as lualine so they can rebuild
+    -- highlights from the palette that has just been applied.
+    vim.g.colors_name = 'base16-custom'
+    vim.api.nvim_exec_autocmds('ColorScheme', { pattern = vim.g.colors_name })
   else
     require('base16-colorscheme')
     vim.cmd('colorscheme base16-rose-pine')
