@@ -24,6 +24,7 @@ return {
         },
         documentation = { auto_show = false },
         menu = {
+          max_height = 5,
           draw = {
             columns = {
               { 'label', 'label_description', gap = 2 },
