@@ -2,3 +2,4 @@ result
 .direnv
 .luarc.json
 .git
+nvim.log
