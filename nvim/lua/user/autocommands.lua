@@ -43,6 +43,15 @@ vim.api.nvim_create_autocmd('FileType', {
 
 local filetype_settings_group = api.nvim_create_augroup('UserFiletypeSettings', {})
 
+-- Keep hyphens as their own motion unit, even in filetypes (such as Nix) that
+-- add them to 'iskeyword'. This makes `foo-bar` three words for w/e motions.
+vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType' }, {
+  group = filetype_settings_group,
+  callback = function()
+    vim.opt_local.iskeyword:remove '-'
+  end,
+})
+
 local function get_rust_textwidth()
   local bufname = vim.api.nvim_buf_get_name(0)
   local search_path = bufname ~= '' and vim.fs.dirname(bufname) or vim.uv.cwd()
