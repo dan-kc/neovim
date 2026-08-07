@@ -83,7 +83,7 @@ require('lze').load {
   -- require('configs.stay-centered'),
   require('configs.conform'),
   require('configs.indentscope'),
-  -- require('configs.pairs'),
+  require('configs.pairs'),
   require('configs.telescope'),
   require('configs.surround'),
   require('configs.treesj'),
