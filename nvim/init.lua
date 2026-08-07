@@ -79,7 +79,7 @@ require('user.clipboard').setup()
 
 require('lze').load {
   require('configs.yazi'),
-  require('configs.flash'),
+  -- require('configs.flash'),
   -- require('configs.stay-centered'),
   require('configs.conform'),
   require('configs.indentscope'),
