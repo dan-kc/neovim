@@ -8,11 +8,6 @@
 
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
-    tobira-nvim = {
-      url = "github:kamegoro/tobira.nvim";
-      flake = false;
-    };
-
     # wf-nvim = {
     #   url = "github:Cassin01/wf.nvim";
     #   flake = false;

@@ -90,5 +90,4 @@ require('lze').load {
   require('configs.gitsigns'),
   require('configs.whichkey'),
   require('configs.blink'),
-  require('configs.tobira'),
 }
