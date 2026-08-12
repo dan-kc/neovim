@@ -8,6 +8,7 @@ local keymap = vim.keymap
 local diagnostic = vim.diagnostic
 
 keymap.set('n', 'Y', 'y$', { silent = true, desc = '[Y]ank to end of line' })
+keymap.set('i', '<C-e>', require('user.bracket_expand').expand, { desc = 'Expand brackets on current line' })
 
 -- Toggle the quickfix list (only opens if it is populated)
 local function toggle_qf_list()
