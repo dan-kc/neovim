@@ -108,6 +108,11 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'gitcommit', 'markdown' },
   callback = function()
     vim.opt_local.wrap = true
+
+    -- Keep Markdown syntax visible, including fenced-code delimiters.
+    if vim.bo.filetype == 'markdown' then
+      vim.opt_local.conceallevel = 0
+    end
   end,
 })
 
