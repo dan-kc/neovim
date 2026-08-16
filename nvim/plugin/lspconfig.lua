@@ -47,6 +47,10 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+vim.lsp.config('*', {
+  capabilities = require('blink.cmp').get_lsp_capabilities(),
+})
+
 vim.lsp.enable('nil_ls')
 vim.lsp.enable('gopls')
 vim.lsp.config('basedpyright', {
@@ -59,11 +63,14 @@ vim.lsp.enable('ruff')
 vim.lsp.enable('elixirls')
 vim.lsp.enable('shopify_theme_ls')
 
-local markdown_capabilities = vim.lsp.protocol.make_client_capabilities()
-markdown_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-
 vim.lsp.config('markdown_oxide', {
-  capabilities = markdown_capabilities,
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+  },
 })
 vim.lsp.enable('markdown_oxide')
 

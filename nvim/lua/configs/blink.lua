@@ -29,6 +29,16 @@ return {
             columns = {
               { 'label', 'label_description', gap = 2 },
               { 'kind_icon', 'kind' },
+              { 'source' },
+            },
+            components = {
+              source = {
+                width = { max = 20 },
+                text = function(ctx)
+                  return ctx.item.client_name or ctx.source_name
+                end,
+                highlight = 'BlinkCmpSource',
+              },
             },
           },
         },
