@@ -46,6 +46,15 @@ return {
       },
       sources = {
         default = { 'lsp', 'path', 'buffer' },
+        providers = {
+          lsp = {
+            transform_items = function(_, items)
+              return vim.tbl_filter(function(item)
+                return item.client_name ~= 'markdown_oxide'
+              end, items)
+            end,
+          },
+        },
       },
       fuzzy = { implementation = 'rust' },
     }
