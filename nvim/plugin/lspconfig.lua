@@ -59,6 +59,14 @@ vim.lsp.enable('ruff')
 vim.lsp.enable('elixirls')
 vim.lsp.enable('shopify_theme_ls')
 
+local markdown_capabilities = vim.lsp.protocol.make_client_capabilities()
+markdown_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+
+vim.lsp.config('markdown_oxide', {
+  capabilities = markdown_capabilities,
+})
+vim.lsp.enable('markdown_oxide')
+
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {

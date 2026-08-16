@@ -73,6 +73,11 @@ return {
       desc = '[telescope] live locations',
     },
     {
+      '<leader>sb',
+      require('telescope.builtin').lsp_references,
+      desc = '[s]earch [b]acklinks',
+    },
+    {
       '<leader>fg',
       function()
         require('telescope.builtin').git_status {

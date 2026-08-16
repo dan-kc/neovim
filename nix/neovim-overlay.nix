@@ -133,6 +133,8 @@ let
     # gopls
     gofumpt
 
+    markdown-oxide
+
     # taplo # TOML LSP and formatter
 
     # pyright

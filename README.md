@@ -332,7 +332,3 @@ you can run Neovim with `nvim-dev` to automatically reload your lua configuratio
 [issues-url]: https://github.com/nix-community/kickstart-nix.nvim/issues
 [license-shield]: https://img.shields.io/github/license/nix-community/kickstart-nix.nvim.svg?style=for-the-badge
 [license-url]: https://github.com/nix-community/kickstart-nix.nvim/blob/master/LICENSE
-
-Todo:
-
-- nvim: rm the thing where the col pops out when going from no git changes to git changes
