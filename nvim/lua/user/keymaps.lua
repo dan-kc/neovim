@@ -161,9 +161,19 @@ local function toggle_spell_check()
 end
 keymap.set('n', '<leader>S', toggle_spell_check, { noremap = true, silent = true, desc = 'toggle [S]pell' })
 
--- Up down to respect wrapping
-keymap.set({ 'n', 'x' }, '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-keymap.set({ 'n', 'x' }, '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- Move by display lines when wrapping. Counts still move by logical lines.
+local function wrapped_line_motion(display_line, logical_line)
+  return function()
+    return vim.v.count == 0 and display_line or logical_line
+  end
+end
+
+keymap.set({ 'n', 'x' }, 'j', wrapped_line_motion('gj', 'j'), { expr = true, silent = true, desc = 'Move down' })
+keymap.set({ 'n', 'x' }, 'k', wrapped_line_motion('gk', 'k'), { expr = true, silent = true, desc = 'Move up' })
+keymap.set({ 'n', 'x' }, '<Down>', wrapped_line_motion('gj', 'j'), { expr = true, silent = true, desc = 'Move down' })
+keymap.set({ 'n', 'x' }, '<Up>', wrapped_line_motion('gk', 'k'), { expr = true, silent = true, desc = 'Move up' })
+keymap.set({ 'n', 'x' }, '<Left>', 'h', { silent = true, desc = 'Move left' })
+keymap.set({ 'n', 'x' }, '<Right>', 'l', { silent = true, desc = 'Move right' })
 
 keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'move [d]own half-page and center' })
 keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'move [u]p half-page and center' })
