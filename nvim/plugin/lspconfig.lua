@@ -71,7 +71,9 @@ vim.lsp.config('markdown_oxide', {
       },
     },
   },
+  root_markers = { '.obsidian', '.git' },
 })
+
 vim.lsp.enable('markdown_oxide')
 
 vim.lsp.config('lua_ls', {
