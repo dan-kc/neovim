@@ -50,7 +50,7 @@ return {
           lsp = {
             transform_items = function(_, items)
               return vim.tbl_filter(function(item)
-                return item.client_name ~= 'markdown_oxide'
+                return item.client_name ~= 'marksman'
               end, items)
             end,
           },

@@ -133,7 +133,7 @@ let
     # gopls
     gofumpt
 
-    markdown-oxide
+    marksman
 
     # taplo # TOML LSP and formatter
 

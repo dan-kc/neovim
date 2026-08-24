@@ -63,18 +63,11 @@ vim.lsp.enable('ruff')
 vim.lsp.enable('elixirls')
 vim.lsp.enable('shopify_theme_ls')
 
-vim.lsp.config('markdown_oxide', {
-  capabilities = {
-    workspace = {
-      didChangeWatchedFiles = {
-        dynamicRegistration = true,
-      },
-    },
-  },
+vim.lsp.config('marksman', {
   root_markers = { '.obsidian', '.git' },
 })
 
-vim.lsp.enable('markdown_oxide')
+vim.lsp.enable('marksman')
 
 vim.lsp.config('lua_ls', {
   settings = {
