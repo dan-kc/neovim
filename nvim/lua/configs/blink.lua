@@ -18,6 +18,7 @@ return {
         },
         menu = {
           max_height = 5,
+          treesitter = { 'lsp' },
           draw = {
             columns = {
               { 'label' },
