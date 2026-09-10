@@ -21,8 +21,7 @@ return {
           draw = {
             columns = {
               { 'label', 'label_description', gap = 2 },
-              { 'kind_icon', 'kind' },
-              { 'source' },
+              { 'kind_icon', 'source', gap = 2 },
             },
             components = {
               source = {
