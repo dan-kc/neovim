@@ -20,7 +20,6 @@ return {
         },
         menu = {
           max_height = 5,
-          treesitter = { 'lsp' },
           draw = {
             columns = {
               { 'label' },
@@ -35,6 +34,7 @@ return {
                 highlight = 'BlinkCmpSource',
               },
             },
+            treesitter = { 'lsp' },
           },
         },
         ghost_text = { enabled = true },
