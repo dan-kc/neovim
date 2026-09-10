@@ -49,8 +49,6 @@ let
     sqlite-lua
     telescope-fzy-native-nvim # TODO: Find a way to lazy load this?
 
-    yanky-nvim
-
     lualine-nvim
     {
       plugin = gitsigns-nvim;
@@ -94,10 +92,6 @@ let
     }
     {
       plugin = conform-nvim;
-      optional = true;
-    }
-    {
-      plugin = flash-nvim;
       optional = true;
     }
     {
