@@ -20,7 +20,7 @@ return {
           max_height = 5,
           draw = {
             columns = {
-              { 'label', 'label_description', gap = 2 },
+              { 'label' },
               { 'kind_icon', 'source', gap = 2 },
             },
             components = {
