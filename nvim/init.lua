@@ -86,7 +86,6 @@ require('lze').load {
   -- require('configs.pairs'),
   require('configs.telescope'),
   require('configs.surround'),
-  require('configs.treesj'),
   require('configs.gitsigns'),
   require('configs.whichkey'),
   require('configs.blink'),

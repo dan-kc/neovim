@@ -101,10 +101,6 @@ let
       optional = true;
     }
     {
-      plugin = treesj;
-      optional = true;
-    }
-    {
       plugin = mini-indentscope;
       optional = true;
     }
