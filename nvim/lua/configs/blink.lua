@@ -8,6 +8,8 @@ return {
         ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
         ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
         ['<C-e>'] = { 'cancel', 'fallback' },
+        ['<PageUp>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<PageDown>'] = { 'scroll_documentation_down', 'fallback' },
       },
       completion = {
         keyword = {
@@ -36,7 +38,7 @@ return {
           },
         },
         ghost_text = { enabled = true },
-        documentation = { auto_show = false },
+        documentation = { auto_show = true },
       },
       sources = {
         default = { 'lsp', 'path', 'buffer' },
