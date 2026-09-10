@@ -3,17 +3,11 @@ return {
   after = function()
     require('blink.cmp').setup {
       keymap = {
-        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-        ['<C-e>'] = false,
-        ['<C-CR>'] = { 'select_and_accept', 'fallback' },
+        preset = 'none',
         ['<C-y>'] = { 'select_and_accept', 'fallback' },
         ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
         ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-
-        ['<C-PageUp>'] = { 'scroll_documentation_up', 'fallback' },
-        ['<C-PageDown>'] = { 'scroll_documentation_down', 'fallback' },
-
-        ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+        ['<C-e>'] = { 'cancel', 'fallback' },
       },
       completion = {
         keyword = {
@@ -22,7 +16,6 @@ return {
         list = {
           selection = { preselect = true, auto_insert = false },
         },
-        documentation = { auto_show = false },
         menu = {
           max_height = 5,
           draw = {
@@ -42,7 +35,8 @@ return {
             },
           },
         },
-        ghost_text = { enabled = false },
+        ghost_text = { enabled = true },
+        documentation = { auto_show = false },
       },
       sources = {
         default = { 'lsp', 'path', 'buffer' },
