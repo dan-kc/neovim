@@ -68,7 +68,6 @@ return {
                 highlight = 'BlinkCmpSource',
               },
             },
-            treesitter = { 'lsp' },
           },
         },
         ghost_text = { enabled = false },
