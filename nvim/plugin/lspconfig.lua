@@ -3,50 +3,6 @@ if vim.g.did_load_lspconfig_plugin then
 end
 vim.g.did_load_lspconfig_plugin = true
 
-local icons = require('user.icons')
-local lspconfig = require('lspconfig')
-
--- Defaults are not working for some reason.
-lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
-  diagnostics = {
-    underline = false,
-    update_in_insert = false,
-    virtual_text = {
-      spacing = 4,
-      source = 'if_many',
-      prefix = '●',
-      -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-      -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-      -- prefix = "icons",
-    },
-    severity_sort = true,
-  },
-  inlay_hints = {
-    enabled = false,
-  },
-  format = {
-    formatting_options = nil,
-    timeout_ms = nil,
-  },
-})
-
-local border = {
-  { icons.border.rounded[1], 'LspPreviewBorder' },
-  { icons.border.rounded[2], 'LspPreviewBorder' },
-  { icons.border.rounded[3], 'LspPreviewBorder' },
-  { icons.border.rounded[4], 'LspPreviewBorder' },
-  { icons.border.rounded[5], 'LspPreviewBorder' },
-  { icons.border.rounded[6], 'LspPreviewBorder' },
-  { icons.border.rounded[7], 'LspPreviewBorder' },
-  { icons.border.rounded[8], 'LspPreviewBorder' },
-}
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = opts.border or border
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
-
 vim.lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities(),
 })
@@ -100,9 +56,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 
 vim.lsp.config('ts_ls', {
-  settings = {
-    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
 })
 vim.lsp.enable('ts_ls')
 

@@ -4,32 +4,42 @@ end
 vim.g.did_load_theme_plugin = true
 
 local base16_yaml_file = vim.fn.expand('~/.config/theme.yaml')
-local base16_palette = {}
+
+local function use_fallback_theme()
+  require('base16-colorscheme')
+  vim.cmd('colorscheme base16-rose-pine')
+end
 
 if vim.fn.filereadable(base16_yaml_file) == 1 then
   local file_content = vim.fn.readfile(base16_yaml_file)
   local yaml_string = table.concat(file_content, '\n')
   local lyaml = require('lyaml')
-  -- Parse the YAML content
   local success, parsed_data = pcall(lyaml.load, yaml_string)
 
   if success and type(parsed_data) == 'table' then
-    base16_palette['base00'] = '#' .. tostring(parsed_data['base00'])
-    base16_palette['base01'] = '#' .. tostring(parsed_data['base01'])
-    base16_palette['base02'] = '#' .. tostring(parsed_data['base02'])
-    base16_palette['base03'] = '#' .. tostring(parsed_data['base03'])
-    base16_palette['base04'] = '#' .. tostring(parsed_data['base04'])
-    base16_palette['base05'] = '#' .. tostring(parsed_data['base05'])
-    base16_palette['base06'] = '#' .. tostring(parsed_data['base06'])
-    base16_palette['base07'] = '#' .. tostring(parsed_data['base07'])
-    base16_palette['base08'] = '#' .. tostring(parsed_data['base08'])
-    base16_palette['base09'] = '#' .. tostring(parsed_data['base09'])
-    base16_palette['base0A'] = '#' .. tostring(parsed_data['base0A'])
-    base16_palette['base0B'] = '#' .. tostring(parsed_data['base0B'])
-    base16_palette['base0C'] = '#' .. tostring(parsed_data['base0C'])
-    base16_palette['base0D'] = '#' .. tostring(parsed_data['base0D'])
-    base16_palette['base0E'] = '#' .. tostring(parsed_data['base0E'])
-    base16_palette['base0F'] = '#' .. tostring(parsed_data['base0F'])
+    local base16_palette = {}
+    local missing_colors = {}
+
+    for index = 0, 15 do
+      local name = string.format('base%02X', index)
+      local value = parsed_data[name]
+
+      if value == nil or tostring(value) == '' then
+        table.insert(missing_colors, name)
+      else
+        local color = tostring(value)
+        base16_palette[name] = color:sub(1, 1) == '#' and color or '#' .. color
+      end
+    end
+
+    if #missing_colors > 0 then
+      vim.notify(
+        'Ignoring incomplete Base16 palette; missing: ' .. table.concat(missing_colors, ', '),
+        vim.log.levels.WARN
+      )
+      use_fallback_theme()
+      return
+    end
 
     require('base16-colorscheme').setup(base16_palette, {
       telescope = true,
@@ -50,10 +60,8 @@ if vim.fn.filereadable(base16_yaml_file) == 1 then
     vim.g.colors_name = 'base16-custom'
     vim.api.nvim_exec_autocmds('ColorScheme', { pattern = vim.g.colors_name })
   else
-    require('base16-colorscheme')
-    vim.cmd('colorscheme base16-rose-pine')
+    use_fallback_theme()
   end
 else
-  require('base16-colorscheme')
-  vim.cmd('colorscheme base16-rose-pine')
+  use_fallback_theme()
 end

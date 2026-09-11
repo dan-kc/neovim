@@ -53,6 +53,7 @@ return {
           selection = { preselect = true, auto_insert = false },
         },
         menu = {
+          border = 'none',
           max_height = 5,
           draw = {
             columns = {

@@ -27,9 +27,9 @@ require('lualine').setup {
         sections = { 'error', 'warn', 'info', 'hint' },
         sources = { 'nvim_diagnostic' },
         symbols = {
-          error = string.format('%s%s', icons.more.error, ' '),
-          warn = string.format('%s%s', icons.more.warningCircle, ' '),
-          info = string.format('%s%s', icons.more.info, ' '),
+          error = string.format('%s%s', icons.diagnostics.error, ' '),
+          warn = string.format('%s%s', icons.diagnostics.warn, ' '),
+          info = string.format('%s%s', icons.diagnostics.info, ' '),
         },
       },
     },
@@ -37,6 +37,6 @@ require('lualine').setup {
       'lsp_progress',
     },
     lualine_y = { { 'filename', path = 0 } },
-    lualine_z = { { 'branch', icon = icons.git.symbol } },
+    lualine_z = { { 'branch', icon = icons.git_branch } },
   },
 }

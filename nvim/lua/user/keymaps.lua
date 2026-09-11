@@ -122,38 +122,32 @@ keymap.set('n', '<leader>-', '<cmd>split<cr>', { desc = 'Vertical Split' })
 
 local severity = diagnostic.severity
 
-keymap.set('n', '[d', diagnostic.goto_prev, { noremap = true, silent = true, desc = 'previous [d]iagnostic' })
-keymap.set('n', ']d', diagnostic.goto_next, { noremap = true, silent = true, desc = 'next [d]iagnostic' })
-keymap.set('n', '[e', function()
-  diagnostic.goto_prev {
-    severity = severity.ERROR,
-  }
-end, { noremap = true, silent = true, desc = 'previous [e]rror diagnostic' })
-keymap.set('n', ']e', function()
-  diagnostic.goto_next {
-    severity = severity.ERROR,
-  }
-end, { noremap = true, silent = true, desc = 'next [e]rror diagnostic' })
-keymap.set('n', '[w', function()
-  diagnostic.goto_prev {
-    severity = severity.WARN,
-  }
-end, { noremap = true, silent = true, desc = 'previous [w]arning diagnostic' })
-keymap.set('n', ']w', function()
-  diagnostic.goto_next {
-    severity = severity.WARN,
-  }
-end, { noremap = true, silent = true, desc = 'next [w]arning diagnostic' })
-keymap.set('n', '[h', function()
-  diagnostic.goto_prev {
-    severity = severity.HINT,
-  }
-end, { noremap = true, silent = true, desc = 'previous [h]int diagnostic' })
-keymap.set('n', ']h', function()
-  diagnostic.goto_next {
-    severity = severity.HINT,
-  }
-end, { noremap = true, silent = true, desc = 'next [h]int diagnostic' })
+local diagnostic_mappings = {
+  { '[d', -1, nil, 'previous [d]iagnostic' },
+  { ']d', 1, nil, 'next [d]iagnostic' },
+  { '[e', -1, severity.ERROR, 'previous [e]rror diagnostic' },
+  { ']e', 1, severity.ERROR, 'next [e]rror diagnostic' },
+  { '[w', -1, severity.WARN, 'previous [w]arning diagnostic' },
+  { ']w', 1, severity.WARN, 'next [w]arning diagnostic' },
+  { '[h', -1, severity.HINT, 'previous [h]int diagnostic' },
+  { ']h', 1, severity.HINT, 'next [h]int diagnostic' },
+}
+
+local function diagnostic_jump(count, diagnostic_severity)
+  return function()
+    diagnostic.jump {
+      count = count,
+      severity = diagnostic_severity,
+    }
+  end
+end
+
+for _, mapping in ipairs(diagnostic_mappings) do
+  keymap.set('n', mapping[1], diagnostic_jump(mapping[2], mapping[3]), {
+    silent = true,
+    desc = mapping[4],
+  })
+end
 
 local function toggle_spell_check()
   ---@diagnostic disable-next-line: param-type-mismatch

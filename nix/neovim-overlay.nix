@@ -10,11 +10,11 @@ let
 
   # This is the helper function that builds the Neovim derivation.
   mkNeovim = pkgs.callPackage ./mkNeovim.nix {
-    inherit (pkgs-locked) wrapNeovimUnstable neovimUtils;
+    inherit (pkgs-locked) wrapNeovimUnstable;
   };
 
   # A plugin can either be a package or an attrset, such as
-  # { plugin = <plugin>; # the package, e.g. pkgs.vimPlugins.nvim-cmp
+  # { plugin = <plugin>; # the package, e.g. pkgs.vimPlugins.nvim-lspconfig
   #   config = <config>; # String; a config that will be loaded with the plugin
   #   # Boolean; Whether to automatically load the plugin as a 'start' plugin,
   #   # or as an 'opt' plugin, that can be loaded with `:packadd!`
@@ -30,18 +30,8 @@ let
     nvim-treesitter-textobjects
     nvim-ts-context-commentstring
 
-    # TODO: Replace with Blink
+    # Bracket snippets
     luasnip
-    nvim-cmp
-    lspkind-nvim
-    cmp_luasnip
-    cmp-nvim-lsp
-    cmp-nvim-lsp-signature-help
-    cmp-buffer
-    cmp-path
-    cmp-nvim-lua
-    cmp-cmdline
-    cmp-cmdline-history
 
     # Needed for telescope
     nvim-web-devicons
@@ -52,18 +42,6 @@ let
     lualine-nvim
     {
       plugin = gitsigns-nvim;
-      optional = true;
-    }
-    {
-      plugin = nvim-unception;
-      optional = true;
-    }
-    {
-      plugin = vim-repeat;
-      optional = true;
-    }
-    {
-      plugin = mini-pairs;
       optional = true;
     }
     {
@@ -84,10 +62,6 @@ let
     }
     {
       plugin = yazi-nvim;
-      optional = true;
-    }
-    {
-      plugin = stay-centered-nvim;
       optional = true;
     }
     {
