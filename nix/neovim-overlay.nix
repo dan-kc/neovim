@@ -82,7 +82,7 @@ let
     ripgrep
     yazi
 
-    # lua-language-server
+    lua-language-server
     stylua
 
     # nil
@@ -91,7 +91,7 @@ let
     # rust-analyzer
     # rustfmt
 
-    # typescript-language-server
+    typescript-language-server
     prettier
 
     # gopls
