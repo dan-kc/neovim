@@ -63,6 +63,15 @@ opt.jumpoptions = 'stack'
 vim.diagnostic.config {
   signs = false,
   virtual_text = false,
+  jump = {
+    on_jump = function(_, bufnr)
+      vim.diagnostic.open_float {
+        bufnr = bufnr,
+        scope = 'cursor',
+        focus = false,
+      }
+    end,
+  },
 }
 
 g.editorconfig = true
