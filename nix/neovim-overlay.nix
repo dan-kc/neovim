@@ -85,26 +85,26 @@ let
     lua-language-server
     stylua
 
-    # nil
-    # nixfmt-rfc-style
+    nil
+    nixfmt
 
-    # rust-analyzer
-    # rustfmt
+    rust-analyzer
+    rustfmt
 
     typescript-language-server
+    tailwindcss-language-server
+    astro-language-server
     prettier
 
-    # gopls
+    terraform-ls
+
     gofumpt
 
     marksman
 
-    # taplo # TOML LSP and formatter
+    taplo
 
-    # pyright
     black
-
-    # clang-tools
   ];
 in
 {

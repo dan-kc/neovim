@@ -60,58 +60,39 @@ vim.lsp.config('ts_ls', {
 })
 vim.lsp.enable('ts_ls')
 
-local function executable(name)
-  return vim.fn.executable(name) == 1
-end
-
-local function ra_mux_running()
-  if not executable('ra-status') or not executable('ra-client') then
-    return false
-  end
-
-  local output = vim.fn.system { 'ra-status', '--json' }
-  if vim.v.shell_error ~= 0 then
-    return false
-  end
-
-  local ok, status = pcall(vim.json.decode, output)
-  return ok and status.running == true
-end
-
-if executable('ra-client') and executable('ra-status') then
-  vim.lsp.config('rust_analyzer', {
-    cmd = { 'ra-client' },
-    root_markers = {
-      'Cargo.toml',
-      'rust-project.json',
-      '.git',
-    },
-    settings = {
-      ['rust-analyzer'] = {
-        imports = {
-          granularity = {
-            group = 'module',
-          },
-          prefix = 'self',
+vim.lsp.config('rust_analyzer', {
+  root_markers = {
+    'Cargo.toml',
+    'rust-project.json',
+    '.git',
+  },
+  settings = {
+    ['rust-analyzer'] = {
+      imports = {
+        granularity = {
+          group = 'module',
         },
-        cargo = {
-          buildScripts = {
-            enable = true,
-          },
-        },
-        procMacro = {
+        prefix = 'self',
+      },
+      cargo = {
+        buildScripts = {
           enable = true,
         },
       },
+      procMacro = {
+        enable = true,
+      },
     },
-  })
-  if ra_mux_running() then
-    vim.lsp.enable('rust_analyzer')
-  end
-end
+  },
+})
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.enable('taplo')
+vim.lsp.enable('tailwindcss')
 
 vim.lsp.config('terraform-ls', {
   cmd = { 'terraform-ls', 'serve' },
+  filetypes = { 'terraform', 'terraform-vars', 'hcl' },
   root_markers = {
     '.terraform.lock.hcl',
   },
