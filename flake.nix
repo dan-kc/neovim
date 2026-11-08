@@ -40,11 +40,7 @@
         shell = pkgs.mkShell {
           name = "nvim-devShell";
           buildInputs = with pkgs; [
-            lua-language-server
-            stylua
             luajitPackages.luacheck
-            nil
-            nixfmt
           ];
           shellHook = ''
             ln -fs ${pkgs.nvim-luarc-json} .luarc.json
